@@ -1,3 +1,6 @@
+# INTRO
+This project demonstrates a basic form UI in React. It reflects some of the labels and values in otoco.io but is only used here for the purposes of familiarity.
+
 TODO:
 [X] Model data, reflect existing fields/values
 [X] Create react app
