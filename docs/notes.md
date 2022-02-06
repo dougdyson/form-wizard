@@ -6,7 +6,7 @@ The current focus of this project is form handling and so will stub out auth/log
 ## Other Takeaways
 - implement backend on Ethereum, particularly the business rules and user's current compliance status with their associated rules.
 - different approach to user onboaring and interaction, very mobile friendly
-- considerations for moving from "nailing it" to "scaling it"
+- interesting considerations for moving from "nailing it" to "scaling it"
 
 ## TODO:
 - DONE! Model data, reflect existing fields/values
