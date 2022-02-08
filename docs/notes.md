@@ -3,6 +3,8 @@ This project demonstrates basic React form handling, including UI and business r
 
 The current focus of this project is form handling and so will stub out auth/login and database server for a later time.
 
+This repo will likely become private.
+
 ## Other Takeaways
 - implement backend on Ethereum, particularly the business rules and user's current compliance status with their associated rules.
 - different approach to user onboaring and interaction, very mobile friendly
