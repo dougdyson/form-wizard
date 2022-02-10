@@ -11,8 +11,8 @@ This repo will likely become private.
 - interesting considerations for moving from "nailing it" to "scaling it"
 
 ## TODO:
-- DONE! Model data, reflect existing fields/values
 - DONE! Create react app
+- IN PROCESS! Model data, reflect existing fields/values
 - Wireframe screens, quick and as lofi as possible
 - Structure data objects and create draft functions
 - Create UI end-to-end skeleton, happy path with no styling
