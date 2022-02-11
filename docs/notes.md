@@ -13,6 +13,7 @@ This repo will likely become private.
 ## TODO:
 - DONE! Create react app
 - IN PROCESS! Model data, reflect existing fields/values
+- TDD data to stub out backend
 - Wireframe screens, quick and as lofi as possible
 - Structure data objects and create draft functions
 - Create UI end-to-end skeleton, happy path with no styling
