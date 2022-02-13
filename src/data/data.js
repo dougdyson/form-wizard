@@ -1,6 +1,8 @@
-// NOTES
+// ===================== NOTES =====================
 // stubbing out backend data to just focus on forms
 // would mock API if this was an existing code base and use axios
+// =================================================
+
 
 // ===========================================
 // ===              ENTITIES               ===
@@ -23,7 +25,6 @@ const addNewEntity = (newEntity) => {
     // throw error
     return false
   }
-
   // TODO: check jurisdiction_id exists
   // TODO: check owner exists
   // TOCONFIRM: check wallet address not already in use??
