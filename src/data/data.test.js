@@ -1,3 +1,5 @@
+// STUBBING OUT BACK END
+// would reach for axios for async backend services
 const data = require('./data');
 
 // ENTITY TESTS
