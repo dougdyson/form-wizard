@@ -17,7 +17,7 @@ test('returns all entities for an owner', () => {
 })
 
 test('adds a new entity', () => {
-  const name = "BizDAO"
+  const name = "BizBiz"
   const owner = "04cb756b21c27dd6c5e1976fa5f568d985283b6a308b1245e150699d49276cd7738f75b6f5ee07b037d664be30f1f7010c48dea2571d822f80bc318a6479aa1641";
   const address = "0419d968192f61faa3c0c65d5d3bb52a0ba08c9096629f25c37a9225bfe1ef1dec4b9c47056b7b69babd73dd260c0bca2132bd740096d9f2fc7ab1c5b200bb7f04";
   const jurisdiction_id = 1;
