@@ -29,12 +29,10 @@ const addNewEntity = (newEntity) => {
   // TODO: check owner exists
   // TO CONFIRM: check wallet address not already in use??
 
-  // set data values
+  // set data values and push to database
   newEntity.id        = allEntities.length + 1;
   newEntity.type      = 'LLC'; // hard coded until multiple types
   newEntity.timestamp = Date.now();
-
-  // add new entity to database
   allEntities.push(newEntity)
 
   // return newEntity with updated ID and fields
