@@ -1,8 +1,11 @@
-const getAllEntities = require('./data'); 
 const sourceData = require('./data.json');
 
-getAllEntities; //?
+const entities = require('./data');
 
-test('test imported data against source data from data.json', () => {
-  expect(getAllEntities).toMatchObject(sourceData);
+test('imported data matches source data from data.json', () => {
+  expect(entities.getAllEntities).toMatchObject(sourceData);
+})
+
+test('return details for entity by specified entity ID', () => {
+  expect(entities.getEntityDetailsByID(1)).toMatchObject(entities.getAllEntities[0]);
 })
