@@ -1,9 +1,9 @@
-const sourceData = require('./entities.json');
-
+// ENTITY TESTS
+const sourceEntities = require('./entities.json');
 const entities = require('./data');
 
-test('imported data matches source data from data.json', () => {
-  expect(entities.allEntities).toMatchObject(sourceData);
+test('imported entities data matches source data from entities.json', () => {
+  expect(entities.allEntities).toMatchObject(sourceEntities);
 })
 
 test('return details for entity by specified entity ID', () => {
@@ -23,4 +23,12 @@ test('adds a new entity', () => {
   const jurisdiction_id = 1;
   const newEntity = {name, owner, address, jurisdiction_id};
   expect(entities.addNewEntity(newEntity)).toEqual(expect.objectContaining(newEntity));
+})
+
+// OWNER TESTS
+const sourceOwners = require('./owners.json');
+const owners = require('./data');
+
+test('imported owners data matches source data from owners.json', () => {
+  expect(owners.allOwners).toMatchObject(sourceOwners);
 })
