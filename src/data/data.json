@@ -2,17 +2,21 @@
   {
     "id": 1,
     "name": "NuCo",
+    "type": "LLC",
+    "jurisdictionID": 1,
     "address": "04f02b7e8fd5ccc09fb748ddaf00b62782d085c5df59d054cd02f9f55bca6b1efbb5beee1a31ab420d56329eecce6d478826233b941c25961ee3ef66ba12f12b42",
     "owner": "04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1",
-    "date-created": 1644740667577,
+    "timestamp": 1644740667577,
     "active": true
   },
   {
     "id": 2,
     "name": "BlockBiz",
+    "type": "LLC",
+    "jurisdictionID": 2,
     "address": "04bc4d0f5f72ad9dc3d46ff94b60d646c8ff08632078fbe1db8f0bfd293cb47a6017ee404edb88856a0a552f81bb82a81c3d8b81f4adf2953985abf22a367f3491",
-    "owner": "0492f8a0818fc22e7236f2ea8626b91f4d900a938aea542dc2dd8553207ad81670619ab37d23172c278716d79841352ae533ce7e82ac6fd87f96f70f2a2cf5a292",
-    "date-created": 1644740958082,
+    "owner": "04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1",
+    "timestamp": 1644740958082,
     "active": true
   }
 ]
