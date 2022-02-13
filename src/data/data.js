@@ -1,5 +1,11 @@
+// NOTES
 // stubbing out backend data to just focus on forms
 // would mock API if this was an existing code base and use axios
+
+// ===========================================
+// ===              ENTITIES               ===
+// ===========================================
+
 const allEntities = require('./entities.json');
 
 const getEntityDetailsByID = (entityID) => {
@@ -33,6 +39,25 @@ const addNewEntity = (newEntity) => {
   // return newEntity with updated ID and fields
   return newEntity;
 };
+
+// ===========================================
+// ===               OWNERS                ===
+// ===========================================
+
+
+// ===========================================
+// ===            JURISDICTIONS            ===
+// ===========================================
+
+
+// ===========================================
+// ===               RULES                 ===
+// ===========================================
+
+
+// ===========================================
+// ===             COMPLIANCE              ===
+// ===========================================
 
 module.exports = { allEntities, getEntityDetailsByID, getEntityDetailsByOwner, addNewEntity };
 
