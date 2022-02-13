@@ -12,7 +12,7 @@ const getEntityDetailsByID = (entityID) => {
   return allEntities.find(entity => entity.id === entityID)
 };
 
-const getEntityDetailsByOwner = (owner) => {
+const getEntitiesForOwner = (owner) => {
   return allEntities.filter(entity => entity.owner === owner)
 };
 
@@ -59,5 +59,5 @@ const addNewEntity = (newEntity) => {
 // ===             COMPLIANCE              ===
 // ===========================================
 
-module.exports = { allEntities, getEntityDetailsByID, getEntityDetailsByOwner, addNewEntity };
+module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity };
 
