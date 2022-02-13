@@ -27,7 +27,7 @@ const addNewEntity = (newEntity) => {
   }
   // TODO: check jurisdiction_id exists
   // TODO: check owner exists
-  // TOCONFIRM: check wallet address not already in use??
+  // TO CONFIRM: check wallet address not already in use??
 
   // set data values
   newEntity.id        = allEntities.length + 1;
