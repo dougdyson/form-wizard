@@ -32,3 +32,8 @@ const owners = require('./data');
 test('imported owners data matches source data from owners.json', () => {
   expect(owners.allOwners).toMatchObject(sourceOwners);
 })
+
+test('return details for owner by specified owner ID', () => {
+  const ownerID = "04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1";
+  expect(owners.getOwnerDetailsByID(ownerID)).toMatchObject(owners.allOwners[0]);
+})

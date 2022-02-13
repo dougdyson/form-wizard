@@ -46,7 +46,9 @@ const addNewEntity = (newEntity) => {
 // ===========================================
 const allOwners = require('./owners.json')
 
-
+const getOwnerDetailsByID = (ownerID) => {
+  return allOwners.find(owner => owner.owner === ownerID)
+};
 
 // ===========================================
 // ===            JURISDICTIONS            ===
@@ -62,5 +64,5 @@ const allOwners = require('./owners.json')
 // ===             COMPLIANCE              ===
 // ===========================================
 
-module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners };
+module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID };
 
