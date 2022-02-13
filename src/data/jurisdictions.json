@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Malta",
+    "timestamp": 1644757815605,
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Singapore",
+    "timestamp": 1644757989459,
+    "active": true
+  }
+]
