@@ -3,5 +3,7 @@
 
 const entities = require('./data.json');
 
-module.exports = entities;
+const getAllEntities = entities;
+
+module.exports = getAllEntities;
 
