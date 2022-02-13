@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "jurisdictionID": 1,
+    "name": "Registered Owner",
+    "timestamp": 1644758826965,
+    "user": "04045ed1cf918c95399a05d6c6fd47232aa6150c736e84a4a872ac9efc4f43f378ba70349a9f889329b4ac2854173684e7642f951aa50c2d65e3d4237bf8418dfa",
+    "active": true
+  },
+  {
+    "id": 2,
+    "jurisdictionID": 1,
+    "name": "Beneficial Owner",
+    "description" : "The legal full name for the beneficial owner must be provided.",
+    "timestamp": 1644758826967,
+    "user": "04045ed1cf918c95399a05d6c6fd47232aa6150c736e84a4a872ac9efc4f43f378ba70349a9f889329b4ac2854173684e7642f951aa50c2d65e3d4237bf8418dfa",
+    "active": true
+  },
+  {
+    "id": 3,
+    "jurisdictionID": 2,
+    "name": "Registered Owner",
+    "timestamp": 1644758826969,
+    "user": "04045ed1cf918c95399a05d6c6fd47232aa6150c736e84a4a872ac9efc4f43f378ba70349a9f889329b4ac2854173684e7642f951aa50c2d65e3d4237bf8418dfa",
+    "active": true
+  },
+  {
+    "id": 4,
+    "jurisdictionID": 2,
+    "name": "Beneficial Owner",
+    "description" : "The legal full name for the beneficial owner must be provided.",
+    "timestamp": 1644758826970,
+    "user": "04045ed1cf918c95399a05d6c6fd47232aa6150c736e84a4a872ac9efc4f43f378ba70349a9f889329b4ac2854173684e7642f951aa50c2d65e3d4237bf8418dfa",
+    "active": true
+  },
+  {
+    "id": 5,
+    "jurisdictionID": 2,
+    "name": "Signed Term Sheet",
+    "description" : "Upload signed term sheet",
+    "timestamp": 1644758826972,
+    "user": "04045ed1cf918c95399a05d6c6fd47232aa6150c736e84a4a872ac9efc4f43f378ba70349a9f889329b4ac2854173684e7642f951aa50c2d65e3d4237bf8418dfa",
+    "active": true
+  }
+]
