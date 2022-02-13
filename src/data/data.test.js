@@ -1,3 +1,3 @@
 const entities = require('./data');
 
-test('returns entities data', () => expect(entities[0].name).toBe('NuCo'))
+test('returns first entity name from data.json', () => expect(entities[0].name).toBe('NuCo'))
