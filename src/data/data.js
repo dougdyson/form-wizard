@@ -1,6 +1,6 @@
 // stubbing out backend data to just focus on forms
 // would mock API if this was an existing code base and use axios
-const allEntities = require('./data.json');
+const allEntities = require('./entities.json');
 
 const getEntityDetailsByID = (entityID) => {
   return allEntities.find(entity => entity.id === entityID)

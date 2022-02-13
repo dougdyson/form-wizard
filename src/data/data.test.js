@@ -1,4 +1,4 @@
-const sourceData = require('./data.json');
+const sourceData = require('./entities.json');
 
 const entities = require('./data');
 
