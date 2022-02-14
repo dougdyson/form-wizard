@@ -78,11 +78,16 @@ test('get compliance by entity id', () => {
   expect(data.getComplianceByEntityID(id)).toEqual(expect.arrayContaining(data.allCompliance.slice(0,3)))
 })
 
-test('add compliance', () => {
+test('add compliance for entity id', () => {
   const entityID   = 1;
   const ruleID     = 1;
   const user       = "04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1";
   const compliance = {entityID, ruleID, user};
   expect(data.addCompliance(compliance)).toEqual(expect.objectContaining(compliance));
+})
+
+test('udpate compliance for a business rul to true for entity id', () => {
+  const complianceID = 1;
+  expect(data.markCompliant(complianceID)).toEqual(true);
 })
 

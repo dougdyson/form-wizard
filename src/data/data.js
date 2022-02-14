@@ -94,18 +94,31 @@ const addCompliance = (compliance) => {
   // set values and push to database
   compliance.id        = allCompliance.length + 1;
   compliance.timestamp = Date.now();
+  compliance.compliant = false;
   compliance.active    = true;
   allCompliance.push(compliance);
   // return compliance object with updated ID and properties
   return compliance;
 }
 
+const markCompliant = (complianceID) => {
+  // find compliance record in data
+  const i = allCompliance.findIndex(compliance => compliance.id === complianceID);
+  // record does exist
+  if (i === -1) {
+    return false;
+  }
+  // update record
+  allCompliance[i].compliant = true;
+  // return success
+  return true;
+}
 
 module.exports = { 
   allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, 
   allOwners, getOwnerDetailsByID, addOwner,
   allJurisdictions, 
   allRules, getRulesByJurisdictionID, 
-  allCompliance, getComplianceByEntityID, addCompliance 
+  allCompliance, getComplianceByEntityID, addCompliance, markCompliant 
 };
 
