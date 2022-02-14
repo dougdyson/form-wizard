@@ -30,12 +30,19 @@ const addNewEntity = (newEntity) => {
   // CONFIRM: check wallet address not already in use??
 
   // set data values and push to database
-  newEntity.id        = allEntities.length + 1;
+  newEntity.id        = allEntities.length + 1; // is compound key better?
   newEntity.type      = 'LLC'; // hard coded until multiple types
   newEntity.timestamp = Date.now();
   allEntities.push(newEntity);
 
-  // TODO:CONFIRM: add associated compliance??
+  // add associated rules to compliance
+  const rules = getRulesByJurisdictionID(newEntity.jurisdictionID);
+  rules.forEach(rule => {
+    const entityID = newEntity.id;
+    const ruleID   = rule.ruleID;
+    const compliance = {entityID, ruleID};
+    addCompliance(compliance);
+  });
 
   // return newEntity object with updated ID and fields
   return newEntity;
