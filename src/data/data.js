@@ -96,7 +96,7 @@ const addCompliance = (compliance) => {
   compliance.timestamp = Date.now();
   compliance.active    = true;
   allCompliance.push(compliance);
-  // return compliance object with updated ID and fields
+  // return compliance object with updated ID and properties
   return compliance;
 }
 
