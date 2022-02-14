@@ -62,3 +62,9 @@ test('imported compliance data matches source data from compliance.json', () => 
   expect(data.allCompliance).toMatchObject(sourceCompliance);
 })
 
+test('get compliance by entity id', () => {
+  const id = 1;
+  // first 3 rows in compliance data are seeded with same entity ID
+  expect(data.getComplianceByEntityID(id)).toEqual(expect.arrayContaining(data.allCompliance.slice(0,3)))
+})
+

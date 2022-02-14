@@ -67,6 +67,11 @@ const getRulesByJurisdictionID = (id) => {
 // ===========================================
 // ===             COMPLIANCE              ===
 // ===========================================
+const allCompliance = require('./compliance.json');
 
-module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID, allJurisdictions, allRules, getRulesByJurisdictionID };
+const getComplianceByEntityID = (id) => {
+  return allCompliance.filter(compliance => compliance.entityID === id);
+}
+
+module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID, allJurisdictions, allRules, getRulesByJurisdictionID, allCompliance, getComplianceByEntityID };
 
