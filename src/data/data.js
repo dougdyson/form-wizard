@@ -66,12 +66,10 @@ const addOwner = (owner) => {
   return owner;
 }
 
-
 // ===========================================
 // ===            JURISDICTIONS            ===
 // ===========================================
 const allJurisdictions = require('./jurisdictions.json');
-
 
 // ===========================================
 // ===               RULES                 ===
