@@ -37,7 +37,16 @@ test('return details for owner by specified owner ID', () => {
   const ownerID = "04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1";
   expect(data.getOwnerDetailsByID(ownerID)).toMatchObject(data.allOwners[0]);
 })
-// TODO: add owner
+
+test('adds a new owner', () => {
+  const address   = "04ead1208b8d394e23e9ead529cffdb4731a6ff99a05fc454bc379ff95d4fdf7da941e6a9d80b5b60e29fb1b871dc9fcbfeca8b0237cb8ad260617b08a27da7c31";
+  const firstName = "Taylor";
+  const lastName  = "Jones";
+  const email     = "tjones@noreply.com";
+  const phone     = "778-778-8877";
+  const owner = {address, firstName, lastName, email, phone};
+  expect(data.addOwner(owner)).toMatchObject(owner);
+})
 
 // JURISDICTION TESTS ======================================
 test('imported jurisdiction data matches source data from jurisdiction.json', () => {

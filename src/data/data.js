@@ -53,9 +53,18 @@ const addNewEntity = (newEntity) => {
 // ===========================================
 const allOwners = require('./owners.json')
 
-const getOwnerDetailsByID = (ownerID) => {
-  return allOwners.find(owner => owner.address === ownerID)
+const getOwnerDetailsByID = (address) => {
+  return allOwners.find(owner => owner.address === address)
 };
+
+const addOwner = (owner) => {
+  // set data values and push to database
+  owner.timestamp = Date.now();
+  owner.active    = true;
+  allOwners.push(owner);
+  // return owner object with ID
+  return owner;
+}
 
 
 // ===========================================
@@ -95,7 +104,7 @@ const addCompliance = (compliance) => {
 
 module.exports = { 
   allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, 
-  allOwners, getOwnerDetailsByID, 
+  allOwners, getOwnerDetailsByID, addOwner,
   allJurisdictions, 
   allRules, getRulesByJurisdictionID, 
   allCompliance, getComplianceByEntityID, addCompliance 
