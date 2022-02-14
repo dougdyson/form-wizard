@@ -25,8 +25,8 @@ const addNewEntity = (newEntity) => {
     // throw error
     return false
   }
-  // TODO: check jurisdiction_id exists
-  // TODO: check owner exists
+  // TODO: check jurisdiction_id exists?
+  // TODO: check owner exists?
   // CONFIRM: check wallet address not already in use??
 
   // set data values and push to database
@@ -85,5 +85,12 @@ const addCompliance = (compliance) => {
   return compliance;
 }
 
-module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID, allJurisdictions, allRules, getRulesByJurisdictionID, allCompliance, getComplianceByEntityID, addCompliance };
+
+module.exports = { 
+  allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, 
+  allOwners , getOwnerDetailsByID, 
+  allJurisdictions, 
+  allRules, getRulesByJurisdictionID, 
+  allCompliance, getComplianceByEntityID, addCompliance 
+};
 
