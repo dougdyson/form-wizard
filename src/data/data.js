@@ -30,7 +30,7 @@ const addNewEntity = (newEntity) => {
   // CONFIRM: check wallet address not already in use??
 
   // set data values and push to database
-  newEntity.id        = allEntities.length + 1; // is compound key better?
+  newEntity.id        = allEntities.length + 1; // can wallet address be used instead?
   newEntity.type      = 'LLC'; // hard coded until multiple types
   newEntity.timestamp = Date.now();
   allEntities.push(newEntity);
@@ -39,12 +39,12 @@ const addNewEntity = (newEntity) => {
   const rules = getRulesByJurisdictionID(newEntity.jurisdictionID);
   rules.forEach(rule => {
     const entityID = newEntity.id;
-    const ruleID   = rule.ruleID;
+    const ruleID   = rule.id;
     const compliance = {entityID, ruleID};
     addCompliance(compliance);
   });
 
-  // return newEntity object with updated ID and fields
+  // return newEntity object with updated ID and generated fields
   return newEntity;
 };
 
