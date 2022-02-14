@@ -55,3 +55,10 @@ test('get rules by jurisdiction id', () => {
   // first 3 rows in data are seeded with same jurisdictionID
   expect(data.getRulesByJurisdictionID(id)).toEqual(expect.arrayContaining(data.allRules.slice(0,3)));
 })
+
+// COMPLIANCE TESTS =============================
+const sourceCompliance = require('./compliance.json');
+test('imported compliance data matches source data from compliance.json', () => {
+  expect(data.allCompliance).toMatchObject(sourceCompliance);
+})
+
