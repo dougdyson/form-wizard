@@ -101,7 +101,7 @@ const addCompliance = (compliance) => {
   return compliance;
 }
 
-const markCompliant = (complianceID) => {
+const updateCompliance = (complianceID, updateValue) => {
   // find compliance record in data
   const i = allCompliance.findIndex(compliance => compliance.id === complianceID);
   // record does exist
@@ -109,7 +109,7 @@ const markCompliant = (complianceID) => {
     return false;
   }
   // update record
-  allCompliance[i].compliant = true;
+  allCompliance[i].compliant = updateValue;
   // return success
   return true;
 }
@@ -119,6 +119,6 @@ module.exports = {
   allOwners, getOwnerDetailsByID, addOwner,
   allJurisdictions, 
   allRules, getRulesByJurisdictionID, 
-  allCompliance, getComplianceByEntityID, addCompliance, markCompliant 
+  allCompliance, getComplianceByEntityID, addCompliance, updateCompliance 
 };
 

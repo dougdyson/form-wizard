@@ -86,8 +86,13 @@ test('add compliance for entity id', () => {
   expect(data.addCompliance(compliance)).toEqual(expect.objectContaining(compliance));
 })
 
-test('udpate compliance for a business rul to true for entity id', () => {
+test('update compliance for a business rule to true for entity id', () => {
   const complianceID = 1;
-  expect(data.markCompliant(complianceID)).toEqual(true);
+  expect(data.updateCompliance(complianceID, true)).toEqual(true);
+})
+
+test('update compliance for a business rule to false for entity id', () => {
+  const complianceID = 4;
+  expect(data.updateCompliance(complianceID, false)).toEqual(true);
 })
 
