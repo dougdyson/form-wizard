@@ -61,10 +61,7 @@ const allJurisdictions = require('./jurisdictions.json');
 const allRules = require('./rules.json');
 
 const getRulesByJurisdictionID = (id) => {
-  console.log(allRules);
-  const ruleList = allRules.filter(rule => rule.jurisdictionID === id)
-  // console.log(ruleList);
-  return ruleList;
+  return allRules.filter(rule => rule.jurisdictionID === id);
 }
 
 // ===========================================
