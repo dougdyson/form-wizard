@@ -54,7 +54,7 @@ const addNewEntity = (newEntity) => {
 const allOwners = require('./owners.json')
 
 const getOwnerDetailsByID = (ownerID) => {
-  return allOwners.find(owner => owner.owner === ownerID)
+  return allOwners.find(owner => owner.address === ownerID)
 };
 
 
