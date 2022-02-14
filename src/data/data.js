@@ -52,17 +52,24 @@ const getOwnerDetailsByID = (ownerID) => {
 // ===========================================
 // ===            JURISDICTIONS            ===
 // ===========================================
-const allJurisdictions = require('./jurisdictions.json')
+const allJurisdictions = require('./jurisdictions.json');
 
 
 // ===========================================
 // ===               RULES                 ===
 // ===========================================
+const allRules = require('./rules.json');
 
+const getRulesByJurisdictionID = (id) => {
+  console.log(allRules);
+  const ruleList = allRules.filter(rule => rule.jurisdictionID === id)
+  // console.log(ruleList);
+  return ruleList;
+}
 
 // ===========================================
 // ===             COMPLIANCE              ===
 // ===========================================
 
-module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID, allJurisdictions };
+module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID, allJurisdictions, allRules, getRulesByJurisdictionID };
 

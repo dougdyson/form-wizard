@@ -2,9 +2,8 @@
 // would reach for axios for async backend services
 const data = require('./data');
 
-// ENTITY TESTS
+// ENTITY TESTS ==================================
 const sourceEntities = require('./entities.json');
-
 test('imported entities data matches source data from entities.json', () => {
   expect(data.allEntities).toMatchObject(sourceEntities);
 })
@@ -28,9 +27,8 @@ test('adds a new entity', () => {
   expect(data.addNewEntity(newEntity)).toEqual(expect.objectContaining(newEntity));
 })
 
-// OWNER TESTS
+// OWNER TESTS ================================
 const sourceOwners = require('./owners.json');
-
 test('imported owners data matches source data from owners.json', () => {
   expect(data.allOwners).toMatchObject(sourceOwners);
 })
@@ -40,9 +38,20 @@ test('return details for owner by specified owner ID', () => {
   expect(data.getOwnerDetailsByID(ownerID)).toMatchObject(data.allOwners[0]);
 })
 
-// JURISDICTION TESTS
+// JURISDICTION TESTS ======================================
 const sourceJurisdictions = require('./jurisdictions.json');
-
 test('imported jurisdiction data matches source data from jurisdiction.json', () => {
-  expect(data.allOwners).toMatchObject(sourceOwners);
+  expect(data.allJurisdictions).toMatchObject(sourceJurisdictions);
+})
+
+// RULES TESTS
+const sourceRules = require('./rules.json');
+test('imported rules data matches source data from rules.json', () => {
+  expect(data.allRules).toMatchObject(sourceRules);
+})
+
+const id = 1;
+// first 3 rows in data are seeded with same jurisdictionID
+test('get rules by jurisdiction id', () => {
+  expect(data.getRulesByJurisdictionID(id)).toEqual(expect.arrayContaining(data.allRules.slice(0,3)))
 })
