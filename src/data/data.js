@@ -33,7 +33,7 @@ const addNewEntity = (newEntity) => {
   newEntity.id        = allEntities.length + 1;
   newEntity.type      = 'LLC'; // hard coded until multiple types
   newEntity.timestamp = Date.now();
-  allEntities.push(newEntity)
+  allEntities.push(newEntity);
 
   // TODO: add associated compliance
 
@@ -75,7 +75,13 @@ const getComplianceByEntityID = (id) => {
   return allCompliance.filter(compliance => compliance.entityID === id);
 }
 
-// TODO: add new entity compliance
+const addCompliance = (compliance) => {
+  compliance.id        = allCompliance.length + 1;
+  compliance.timestamp = Date.now();
+  compliance.active    = true;
+  allCompliance.push(compliance);
+  return compliance;
+}
 
-module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID, allJurisdictions, allRules, getRulesByJurisdictionID, allCompliance, getComplianceByEntityID };
+module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID, allJurisdictions, allRules, getRulesByJurisdictionID, allCompliance, getComplianceByEntityID, addCompliance };
 
