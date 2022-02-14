@@ -38,13 +38,14 @@ const addNewEntity = (newEntity) => {
   // add associated rules to compliance
   const rules = getRulesByJurisdictionID(newEntity.jurisdictionID);
   rules.forEach(rule => {
+    // set data values and push to database
     const entityID = newEntity.id;
     const ruleID   = rule.id;
     const compliance = {entityID, ruleID};
     addCompliance(compliance);
   });
 
-  // return newEntity object with updated ID and generated fields
+  // return newEntity object with updated ID
   return newEntity;
 };
 
