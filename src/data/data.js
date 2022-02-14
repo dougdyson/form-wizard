@@ -35,6 +35,8 @@ const addNewEntity = (newEntity) => {
   newEntity.timestamp = Date.now();
   allEntities.push(newEntity)
 
+  // TODO: add associated compliance
+
   // return newEntity with updated ID and fields
   return newEntity;
 };
@@ -72,6 +74,8 @@ const allCompliance = require('./compliance.json');
 const getComplianceByEntityID = (id) => {
   return allCompliance.filter(compliance => compliance.entityID === id);
 }
+
+// TODO: add new entity compliance
 
 module.exports = { allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, allOwners , getOwnerDetailsByID, allJurisdictions, allRules, getRulesByJurisdictionID, allCompliance, getComplianceByEntityID };
 
