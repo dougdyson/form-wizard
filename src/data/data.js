@@ -39,8 +39,8 @@ const addNewEntity = (newEntity) => {
   const rules = getRulesByJurisdictionID(newEntity.jurisdictionID);
   rules.forEach(rule => {
     // set data values and push to database
-    const entityID = newEntity.id;
-    const ruleID   = rule.id;
+    const entityID   = newEntity.id;
+    const ruleID     = rule.id;
     const compliance = {entityID, ruleID};
     addCompliance(compliance);
   });
