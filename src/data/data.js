@@ -1,6 +1,6 @@
 // ===================== NOTES =====================
 // stubbing out backend data to just focus on forms
-// would mock API if this was an existing code base and use axios
+// would mock API if this was an existing code base
 // =================================================
 
 
