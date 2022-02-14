@@ -104,12 +104,15 @@ const addCompliance = (compliance) => {
 const updateCompliance = (complianceID, updateValue) => {
   // find compliance record in data
   const i = allCompliance.findIndex(compliance => compliance.id === complianceID);
+  
   // record does exist
   if (i === -1) {
     return false;
   }
+  
   // update record
   allCompliance[i].compliant = updateValue;
+  
   // return success
   return true;
 }
