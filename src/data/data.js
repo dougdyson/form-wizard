@@ -27,7 +27,7 @@ const addNewEntity = (newEntity) => {
   }
   // TODO: check jurisdiction_id exists
   // TODO: check owner exists
-  // TO CONFIRM: check wallet address not already in use??
+  // CONFIRM: check wallet address not already in use??
 
   // set data values and push to database
   newEntity.id        = allEntities.length + 1;
@@ -35,7 +35,7 @@ const addNewEntity = (newEntity) => {
   newEntity.timestamp = Date.now();
   allEntities.push(newEntity);
 
-  // TODO: add associated compliance
+  // TODO:CONFIRM: add associated compliance??
 
   // return newEntity with updated ID and fields
   return newEntity;
@@ -76,10 +76,12 @@ const getComplianceByEntityID = (id) => {
 }
 
 const addCompliance = (compliance) => {
+  // set values and push to database
   compliance.id        = allCompliance.length + 1;
   compliance.timestamp = Date.now();
   compliance.active    = true;
   allCompliance.push(compliance);
+  // return compliance with updated ID and fields
   return compliance;
 }
 
