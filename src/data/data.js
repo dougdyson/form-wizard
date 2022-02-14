@@ -20,7 +20,7 @@ const getEntitiesForOwner = (owner) => {
 
 const addNewEntity = (newEntity) => {
   
-  // check for duplicate entity names, also done on front-end UI
+  // check for duplicate entity names
   if (allEntities.find(entity => entity.name === newEntity.name)){
     // throw error
     return false
