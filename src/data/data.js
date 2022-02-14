@@ -88,7 +88,7 @@ const addCompliance = (compliance) => {
 
 module.exports = { 
   allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, 
-  allOwners , getOwnerDetailsByID, 
+  allOwners, getOwnerDetailsByID, 
   allJurisdictions, 
   allRules, getRulesByJurisdictionID, 
   allCompliance, getComplianceByEntityID, addCompliance 
