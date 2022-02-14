@@ -1,5 +1,5 @@
 // STUBBING OUT BACK END
-// would reach for axios for async backend services
+// would reach for axios for backend services
 const data = require('./data');
 
 // ENTITY TESTS ==================================
@@ -45,8 +45,8 @@ test('imported jurisdiction data matches source data from jurisdiction.json', ()
 })
 
 // RULES TESTS =============================
-const sourceRules = require('./rules.json');
 test('imported rules data matches source data from rules.json', () => {
+  const sourceRules = require('./rules.json');
   expect(data.allRules).toMatchObject(sourceRules);
 })
 
@@ -57,8 +57,8 @@ test('get rules by jurisdiction id', () => {
 })
 
 // COMPLIANCE TESTS =============================
-const sourceCompliance = require('./compliance.json');
 test('imported compliance data matches source data from compliance.json', () => {
+  const sourceCompliance = require('./compliance.json');
   expect(data.allCompliance).toMatchObject(sourceCompliance);
 })
 
