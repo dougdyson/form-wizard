@@ -37,7 +37,7 @@ const addNewEntity = (newEntity) => {
 
   // TODO:CONFIRM: add associated compliance??
 
-  // return newEntity with updated ID and fields
+  // return newEntity object with updated ID and fields
   return newEntity;
 };
 
@@ -81,7 +81,7 @@ const addCompliance = (compliance) => {
   compliance.timestamp = Date.now();
   compliance.active    = true;
   allCompliance.push(compliance);
-  // return compliance with updated ID and fields
+  // return compliance object with updated ID and fields
   return compliance;
 }
 
