@@ -24,13 +24,13 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
             />
           </g>
         </svg>
-        <h1>BlockDocs</h1>
+        <h1>BD</h1>
       </div>
       <div>
         {user ? (
           <>
             <span className="welcome">
-              Welcome, <b>{user.name}</b>!
+              <b>{user.name}</b>
             </span>
             <Button size="small" onClick={onLogout} label="Log out" />
           </>

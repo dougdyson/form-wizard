@@ -11,6 +11,8 @@ section {
 section h2 {
   font-weight: 900;
   font-size: 32px;
+  width: 100%;
+  align-items: center;
   line-height: 1;
   margin: 0 0 4px;
   display: inline-block;
