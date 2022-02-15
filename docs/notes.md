@@ -16,6 +16,7 @@ This repo will likely become private.
 - DONE! Model data, reflect existing fields/values
 - DONE! Structure data objects and create draft functions
 - DONE! TDD data to stub out backend
+- DONE! install and configure Storybook
 - Wireframe screens, quick and as lofi as possible
 - Create UI end-to-end skeleton, happy path with no styling
 - UI, full data
