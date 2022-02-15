@@ -5,9 +5,23 @@
 
 
 // ===========================================
+// ===            JURISDICTIONS            ===
+// ===========================================
+const allJurisdictions = require('./jurisdictions.json');
+
+
+// ===========================================
+// ===               RULES                 ===
+// ===========================================
+const allRules = require('./rules.json');
+
+const getRulesByJurisdictionID = (jurisdictionID) => {
+  return allRules.filter(rule => rule.jurisdictionID === jurisdictionID);
+}
+
+// ===========================================
 // ===              ENTITIES               ===
 // ===========================================
-
 const allEntities = require('./entities.json');
 
 const getEntityDetailsByID = (entityID) => {
@@ -64,20 +78,6 @@ const addOwner = (owner) => {
   owner.active    = true;
   allOwners.push(owner);
   return owner;
-}
-
-// ===========================================
-// ===            JURISDICTIONS            ===
-// ===========================================
-const allJurisdictions = require('./jurisdictions.json');
-
-// ===========================================
-// ===               RULES                 ===
-// ===========================================
-const allRules = require('./rules.json');
-
-const getRulesByJurisdictionID = (jurisdictionID) => {
-  return allRules.filter(rule => rule.jurisdictionID === jurisdictionID);
 }
 
 // ===========================================
