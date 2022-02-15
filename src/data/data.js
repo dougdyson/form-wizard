@@ -11,11 +11,11 @@
 const allEntities = require('./entities.json');
 
 const getEntityDetailsByID = (entityID) => {
-  return allEntities.find(entity => entity.id === entityID)
+  return allEntities.find(entity => entity.id === entityID);
 };
 
 const getEntitiesForOwner = (owner) => {
-  return allEntities.filter(entity => entity.owner === owner)
+  return allEntities.filter(entity => entity.owner === owner);
 };
 
 const addNewEntity = (newEntity) => {
@@ -23,7 +23,7 @@ const addNewEntity = (newEntity) => {
   // check for duplicate entity names
   if (allEntities.find(entity => entity.name === newEntity.name)){
     // throw error
-    return false
+    return false;
   }
   // TODO: check jurisdiction_id exists?
   // TODO: check owner exists?
@@ -45,14 +45,14 @@ const addNewEntity = (newEntity) => {
     addCompliance(compliance);
   });
 
-  // return newEntity object with updated ID
+  // return newEntity object with updated id
   return newEntity;
 };
 
 // ===========================================
 // ===               OWNERS                ===
 // ===========================================
-const allOwners = require('./owners.json')
+const allOwners = require('./owners.json');
 
 const getOwnerDetailsByID = (address) => {
   return allOwners.find(owner => owner.address === address)
@@ -63,7 +63,6 @@ const addOwner = (owner) => {
   owner.timestamp = Date.now();
   owner.active    = true;
   allOwners.push(owner);
-  // return owner object with ID
   return owner;
 }
 
@@ -77,8 +76,8 @@ const allJurisdictions = require('./jurisdictions.json');
 // ===========================================
 const allRules = require('./rules.json');
 
-const getRulesByJurisdictionID = (id) => {
-  return allRules.filter(rule => rule.jurisdictionID === id);
+const getRulesByJurisdictionID = (jurisdictionID) => {
+  return allRules.filter(rule => rule.jurisdictionID === jurisdictionID);
 }
 
 // ===========================================
@@ -86,8 +85,8 @@ const getRulesByJurisdictionID = (id) => {
 // ===========================================
 const allCompliance = require('./compliance.json');
 
-const getComplianceByEntityID = (id) => {
-  return allCompliance.filter(compliance => compliance.entityID === id);
+const getComplianceByEntityID = (entityID) => {
+  return allCompliance.filter(compliance => compliance.entityID === entityID);
 }
 
 const addCompliance = (compliance) => {
@@ -97,7 +96,7 @@ const addCompliance = (compliance) => {
   compliance.compliant = false;
   compliance.active    = true;
   allCompliance.push(compliance);
-  // return compliance object with updated ID and properties
+  // return compliance object with updated id and properties
   return compliance;
 }
 
@@ -110,7 +109,7 @@ const updateCompliance = (complianceID, updateValue) => {
     return false;
   }
   
-  // update record
+  // update database record
   allCompliance[i].compliant = updateValue;
   
   // return success
