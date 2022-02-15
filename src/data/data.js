@@ -44,7 +44,7 @@ const addNewEntity = (newEntity) => {
   // CONFIRM: check wallet address not already in use??
 
   // set data values and push to database
-  newEntity.id        = allEntities.length + 1; // can wallet address be used instead?
+  newEntity.id        = allEntities.length + 1; // use wallet address instead?
   newEntity.type      = 'LLC'; // hard coded until multiple types
   newEntity.timestamp = Date.now();
   allEntities.push(newEntity);
