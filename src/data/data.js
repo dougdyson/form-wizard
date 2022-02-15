@@ -101,7 +101,7 @@ const addCompliance = (compliance) => {
   return compliance;
 }
 
-const updateCompliance = (complianceID, updateValue) => {
+const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
   // find compliance record in data
   const i = allCompliance.findIndex(compliance => compliance.id === complianceID);
   
@@ -109,9 +109,11 @@ const updateCompliance = (complianceID, updateValue) => {
   if (i === -1) {
     return false;
   }
-  // update database record
-  allCompliance[i].compliant = updateValue;
-  
+  // update database records
+  console.log(allCompliance[i]);
+  allCompliance[i].ruleUpdate = ruleUpdate; 
+  allCompliance[i].compliant  = updateValue;
+  console.log(allCompliance[i]);
   // return success
   return true;
 }

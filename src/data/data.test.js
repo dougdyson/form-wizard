@@ -88,7 +88,8 @@ test('add compliance for entity id', () => {
 
 test('update compliance for a business rule to true for entity id', () => {
   const complianceID = 1;
-  expect(data.updateCompliance(complianceID, true)).toEqual(true);
+  const ruleUpdate = {"beneficialOwner": "Regan"}
+  expect(data.updateCompliance(complianceID, ruleUpdate, true)).toEqual(true);
 })
 
 test('update compliance for a business rule to false for entity id', () => {
