@@ -113,7 +113,7 @@ const updateCompliance = (complianceID, updateValue) => {
   allCompliance[i].compliant = updateValue;
   
   // return success
-  return true
+  return true;
 }
 
 module.exports = { 
