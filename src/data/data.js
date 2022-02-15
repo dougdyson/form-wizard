@@ -110,10 +110,8 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
     return false;
   }
   // update database records
-  console.log(allCompliance[i]);
   allCompliance[i].ruleUpdate = ruleUpdate; 
   allCompliance[i].compliant  = updateValue;
-  console.log(allCompliance[i]);
   // return success
   return true;
 }
