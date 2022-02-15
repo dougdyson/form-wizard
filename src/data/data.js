@@ -108,7 +108,6 @@ const updateCompliance = (complianceID, updateValue) => {
   if (i === -1) {
     return false;
   }
-  
   // update database record
   allCompliance[i].compliant = updateValue;
   
