@@ -77,6 +77,7 @@ const addOwner = (owner) => {
   owner.timestamp = Date.now();
   owner.active    = true;
   allOwners.push(owner);
+  // return owner object with updated id and properties
   return owner;
 }
 
@@ -104,7 +105,7 @@ const updateCompliance = (complianceID, updateValue) => {
   // find compliance record in data
   const i = allCompliance.findIndex(compliance => compliance.id === complianceID);
   
-  // record does exist
+  // record does exist, return failure
   if (i === -1) {
     return false;
   }
