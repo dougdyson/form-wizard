@@ -105,7 +105,7 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
   // find compliance record in data
   const i = allCompliance.findIndex(compliance => compliance.id === complianceID);
   
-  // record does exist, return failure
+  // record does exist, return failure/throw error
   if (i === -1) {
     return false;
   }
