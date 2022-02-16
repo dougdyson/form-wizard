@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grid, Avatar } from '@mui/material/';
-import { Typography } from '@mui/material/';
+import { Grid, Avatar, Typography } from '@mui/material/';
 
 export default function Header(){
 
