@@ -53,9 +53,14 @@ test('adds a new owner', () => {
   expect(data.addOwner(owner)).toMatchObject(owner);
 })
 
-test('email address exists', () => {
+test('owner email address exists', () => {
   const ownerEmail = "tjones@noreply.com";
   expect(data.ownerEmailExists(ownerEmail)).toBe(true);
+})
+
+test('correct owner password returns true', () => {
+  const ownerPassword = 'Pass123!';
+  expect(data.validOwnerPassword(ownerPassword)).toBe(true);
 })
 
 // =======================================================================
