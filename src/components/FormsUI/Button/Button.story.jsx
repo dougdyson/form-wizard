@@ -1,10 +1,10 @@
 import React from "react";
-import { ButtonWrapper } from './Button';
+import { Button } from '@mui/material';
 
 export default {
   title: "UI/Buttons",
   component: Button
 };
 
-export const TestButton = () => <ButtonWrapper variant='outlined' />
+export const TestButton = () => <Button variant='outlined' />
 
