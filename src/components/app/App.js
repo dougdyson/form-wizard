@@ -1,5 +1,6 @@
-import { Typography } from '@material-ui/core';
+import React from 'react';
 import { Container, Grid, Avatar, Stack, Card } from '@mui/material/';
+import { Typography } from '@mui/material/';
 
 function App() {
   return (
