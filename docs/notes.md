@@ -10,10 +10,9 @@ The current focus of this project is frontend and so will stub out backend servi
 - update business rule compliance
 
 ## Ideas & Takeaways
-- extensible model, business rule with corresponding React component
-- implement backend on Ethereum, particularly the business rules and user's current compliance status with their associated rules.
 - activity feed approach to user onboarding and interaction, very mobile friendly
-- interesting considerations for moving from "nailing it" to "scaling it"
+- extensible model, with business rules matching corresponding React components
+- implement backend on Ethereum, particularly entity's current compliance status with associated business rules.
 
 ## TODO:
 - DONE! Create react app
