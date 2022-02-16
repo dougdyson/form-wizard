@@ -117,10 +117,10 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 }
 
 module.exports = { 
-  allEntities, getEntityDetailsByID, getEntitiesForOwner, addNewEntity, 
-  allOwners, getOwnerDetailsByID, addOwner,
+  allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
+  allOwners, addOwner, getOwnerDetailsByID,
   allJurisdictions, 
   allRules, getRulesByJurisdictionID, 
-  allCompliance, getComplianceByEntityID, addCompliance, updateCompliance 
+  allCompliance, addCompliance, getComplianceByEntityID, updateCompliance 
 };
 
