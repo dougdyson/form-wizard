@@ -43,7 +43,7 @@ test('return details for owner by specified owner ID', () => {
 })
 
 test('adds a new owner', () => {
-  const address   = "04ead1208b8d394e23e9ead529cffdb4731a6ff99a05fc454bc379ff95d4fdf7da941e6a9d80b5b60e29fb1b871dc9fcbfeca8b0237cb8ad260617b08a27da7c31";
+  const address   = "04ead1208b8d394e23e9ead529cffdata4731a6ff99a05fc454bc379ff95d4fdf7da941e6a9d80b5b60e29fb1b871dc9fcbfeca8b0237cb8ad260617b08a27da7c31";
   const firstName = "Taylor";
   const lastName  = "Jones";
   const email     = "tjones@noreply.com";
