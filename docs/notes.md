@@ -15,7 +15,7 @@ The current focus of this project is form handling and so will stub out auth/log
 - DONE! TDD data object and draft functions to stub out backend
 - DONE! Install storybook
 - DONE! Install form libraries
-- Wireframe screens, quick and as lofi as possible
+- Wireframe, quick and as lofi as possible
 - Create UI end-to-end skeleton/happy path
 - UI, full data
 - polish
