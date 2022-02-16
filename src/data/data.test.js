@@ -71,6 +71,12 @@ test('imported jurisdiction data matches source data from jurisdiction.json', ()
   expect(data.allJurisdictions).toMatchObject(sourceJurisdictions);
 })
 
+test('returns jurisdiction object for a specified id', () => {
+  const sourceJurisdictions = require('./jurisdictions.json');
+  const jurisdictionID = 1;
+  expect(data.getJurisdictionByID(jurisdictionID)).toMatchObject(sourceJurisdictions[0]);
+})
+
 // =======================================================================
 // ===                        RULES TESTS                              ===
 // =======================================================================
