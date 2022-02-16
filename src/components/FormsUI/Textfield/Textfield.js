@@ -2,10 +2,9 @@ import React from "react";
 import { TextField } from "@mui/material";
 import { useField } from "formik";
 
-
 const TextfieldWrapper = ({name, ...otherProps}) => {
-  // manafor form state
-  const [field, info] = useField(name);
+  // form state
+  const [field, meta] = useField(name);
   
   // set style defaults
   const configTextfield = {
@@ -15,6 +14,7 @@ const TextfieldWrapper = ({name, ...otherProps}) => {
     fullWidth: true
   }
 
+  // user error
   if (meta && meta.touched && meta.error){
     configTextfield.error = true;
     configTextfield.helperText = meta.error;
