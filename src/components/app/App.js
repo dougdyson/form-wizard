@@ -1,8 +1,5 @@
-// import { makeStyle } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-
-import { Container, Grid, Avatar} from '@material-ui/core';
-
+import { Container, Grid, Avatar, Stack, Card } from '@mui/material/';
 
 function App() {
   return (
@@ -24,17 +21,16 @@ function App() {
               fill="#91BAF8"
             />
           </g>
-        </svg></div>
+        </svg>BlockDocs</div>
         </Grid>
         <Grid item>
-          <Avatar sx={{ width: 8, height: 8 }}>DD</Avatar>
+          <Avatar sx={{ width: 24, height: 24 }}></Avatar>
         </Grid>
       </Grid>
-      <Typography>Entity/Compliance List</Typography>
-      <Grid container>
-        <Grid xs="12">Item in list</Grid>
-        <Grid>Item in list</Grid>
-      </Grid>
+      <Typography>List Header</Typography>
+      <Stack>
+        <Card>Card in list</Card>
+      </Stack>
     </Container>
   );
 }
