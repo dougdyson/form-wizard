@@ -15,9 +15,9 @@ The current focus of this project is form handling and so will stub out auth/log
 - DONE! Structure data objects and create draft functions
 - DONE! TDD data to stub out backend
 - DONE! install and configure Storybook
-- Install material-ui
-- Install yup
-- Install formik
+- DONE! Install @material-ui
+- DONE! Install yup
+- DONE! Install formik
 - Wireframe screens, quick and as lofi as possible
 - Create UI end-to-end skeleton/happy path
 - UI, full data
