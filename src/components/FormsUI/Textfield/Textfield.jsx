@@ -1,6 +1,6 @@
 import React from "react";
-import { TextField } from "@mui/material";
 import { useField } from "formik";
+import { TextField } from "@mui/material";
 
 const TextfieldWrapper = ({name, ...otherProps}) => {
   // form state
@@ -10,14 +10,14 @@ const TextfieldWrapper = ({name, ...otherProps}) => {
   const configTextfield = {
     ...field,
     ...otherProps,
-    variant: 'outlined',
-    fullWidth: true
+    fullWidth: true,
+    variant: 'outlined'
   }
 
   // user error
   if (meta && meta.touched && meta.error){
-    configTextfield.error = true;
     configTextfield.helperText = meta.error;
+    configTextfield.error = true;
   }
 
   return (
