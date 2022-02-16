@@ -26,4 +26,3 @@ The current focus of this project is form handling and so will stub out auth/log
 ## STRETCH:
 - upload PDFs, shareholder agreement and ID (potential for IPFS)
 - set alerts for certain business rules, including and especially to biz dev
-- add users, Auth0
