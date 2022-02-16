@@ -1,8 +1,11 @@
-// import './App.css' 
+import { makeStyle } from '@material-ui/core/styles';
+import { Container } from '@material-ui/core';
 
 function App() {
   return (
-    <div>hello</div>
+    <Container>
+      <div>hello</div>
+    </Container>
   );
 }
 
