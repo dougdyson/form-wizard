@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Grid, Avatar, Stack, Card } from '@mui/material/';
-import { Typography } from '@mui/material/';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Container } from '@mui/material/';
+
 import Header from '../Header/Header';
 
 function App() {
