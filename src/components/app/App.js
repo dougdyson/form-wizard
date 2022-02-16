@@ -1,18 +1,12 @@
 import React from 'react';
 import { Container, Grid, Avatar, Stack, Card } from '@mui/material/';
 import { Typography } from '@mui/material/';
+import Header from '../Header/Header';
 
 function App() {
   return (
     <Container>
-      <Grid container direction="row" justifyContent="space-between" alignItems="center">
-        <Grid item>
-          <Typography variant="overline">BlockDocs</Typography>
-        </Grid>
-        <Grid item>
-          <Avatar sx={{ width: 24, height: 24 }}></Avatar>
-        </Grid>
-      </Grid>
+       <Header />
     </Container>
   );
 }
