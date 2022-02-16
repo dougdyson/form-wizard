@@ -11,13 +11,10 @@ The current focus of this project is form handling and so will stub out auth/log
 
 ## TODO:
 - DONE! Create react app
-- DONE! Model data, reflect existing fields/values
-- DONE! Structure data objects and create draft functions
-- DONE! TDD data to stub out backend
-- DONE! install and configure Storybook
-- DONE! Install @material-ui
-- DONE! Install yup
-- DONE! Install formik
+- DONE! Model data
+- DONE! TDD data object and draft functions to stub out backend
+- DONE! Install storybook
+- DONE! Install form libraries
 - Wireframe screens, quick and as lofi as possible
 - Create UI end-to-end skeleton/happy path
 - UI, full data
@@ -25,4 +22,4 @@ The current focus of this project is form handling and so will stub out auth/log
 
 ## STRETCH:
 - upload PDFs, shareholder agreement and ID (potential for IPFS)
-- set alerts for certain business rules, including and especially to biz dev
+- set alerts for certain business rules, especially to biz dev
