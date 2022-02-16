@@ -91,6 +91,12 @@ test('get rules by jurisdiction id', () => {
   expect(data.getRulesByJurisdictionID(id)).toEqual(expect.arrayContaining(data.allRules.slice(0,3)));
 })
 
+test('get rule by rule id, ()', () => {
+  const sourceRules = require('./rules.json');
+  const id = 1;
+  expect(data.getRuleByID(id)).toMatchObject(sourceRules[0]);
+})
+
 // =======================================================================
 // ===                      COMPLIANCE TESTS                           ===
 // =======================================================================
