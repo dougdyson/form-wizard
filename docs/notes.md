@@ -1,7 +1,7 @@
 # Welcome to FormWizard!
 This project demonstrates basic form handling in React, including a styled UI and field validation.
 
-The current focus of this project is frontend and so will stub out backend services for a later time.
+The current focus of this project is frontend and so will stub out backend services.
 
 ## Scope
 - create account
