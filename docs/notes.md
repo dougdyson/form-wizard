@@ -1,7 +1,7 @@
 # Welcome to FormWizard!
-This project demonstrates basic React form handling, including UI and rudimentary business rule validation, and displays progress and status of the user's current business rule complicance status.
+This project demonstrates basic form handling in React, including a styled UI and field validation.
 
-The current focus of this project is form handling and so will stub out auth/login and database server for a later time.
+The current focus of this project is frontend and so will stub out backend services for a later time.
 
 ## Scope
 - create account
@@ -27,5 +27,7 @@ The current focus of this project is form handling and so will stub out auth/log
 - polish
 
 ## STRETCH:
-- upload PDFs, shareholder agreement and ID (potential for IPFS)
 - set alerts for certain business rules, especially to biz dev
+- admin dashboard, drive user conversion
+- upload PDFs, shareholder agreement and ID (potential for IPFS)
+- create backend (Ethereum, IPFS?, MongoDB?)
