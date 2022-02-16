@@ -54,8 +54,8 @@ test('adds a new owner', () => {
 })
 
 test('email address exists', () => {
-  const emailToCheck = "tjones@noreply.com";
-  expect(data.allOwners.emailExists(emailToCheck)).toBe(true);
+  const ownerEmail = "tjones@noreply.com";
+  expect(data.ownerEmailExists(ownerEmail)).toBe(true);
 })
 
 // =======================================================================

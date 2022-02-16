@@ -81,6 +81,15 @@ const addOwner = (owner) => {
   return owner;
 }
 
+const ownerEmailExists = (ownerEmail) => {
+  if (allOwners.find(owner => owner.email === ownerEmail)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
 // ===========================================
 // ===             COMPLIANCE              ===
 // ===========================================
@@ -118,7 +127,7 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 
 module.exports = { 
   allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
-  allOwners, addOwner, getOwnerDetailsByID,
+  allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists,
   allJurisdictions, 
   allRules, getRulesByJurisdictionID, 
   allCompliance, addCompliance, getComplianceByEntityID, updateCompliance 
