@@ -2,7 +2,9 @@
 // would reach for axios for backend services
 const data = require('./data');
 
-// ENTITY TESTS ==================================
+// ==========================================================================
+// ===                       ENTITY TESTS                                 ===
+// ==========================================================================
 test('imported entities data matches source data from entities.json', () => {
   const sourceEntities = require('./entities.json');
   expect(data.allEntities).toMatchObject(sourceEntities);
@@ -27,7 +29,9 @@ test('adds a new entity', () => {
   expect(data.addNewEntity(newEntity)).toEqual(expect.objectContaining(newEntity));
 })
 
-// OWNER TESTS ================================
+// =======================================================================
+// ===                        OWNER TESTS                              ===
+// =======================================================================
 test('imported owners data matches source data from owners.json', () => {
   const sourceOwners = require('./owners.json');
   expect(data.allOwners).toMatchObject(sourceOwners);
@@ -48,13 +52,17 @@ test('adds a new owner', () => {
   expect(data.addOwner(owner)).toMatchObject(owner);
 })
 
-// JURISDICTION TESTS ======================================
+// =======================================================================
+// ===                    JURISDICTION TESTS                           ===
+// =======================================================================
 test('imported jurisdiction data matches source data from jurisdiction.json', () => {
   const sourceJurisdictions = require('./jurisdictions.json');
   expect(data.allJurisdictions).toMatchObject(sourceJurisdictions);
 })
 
-// RULES TESTS =============================
+// =======================================================================
+// ===                        RULES TESTS                              ===
+// =======================================================================
 test('imported rules data matches source data from rules.json', () => {
   const sourceRules = require('./rules.json');
   expect(data.allRules).toMatchObject(sourceRules);
@@ -66,7 +74,9 @@ test('get rules by jurisdiction id', () => {
   expect(data.getRulesByJurisdictionID(id)).toEqual(expect.arrayContaining(data.allRules.slice(0,3)));
 })
 
-// COMPLIANCE TESTS =============================
+// =======================================================================
+// ===                      COMPLIANCE TESTS                           ===
+// =======================================================================
 test('imported compliance data matches source data from compliance.json', () => {
   const sourceCompliance = require('./compliance.json');
   expect(data.allCompliance).toMatchObject(sourceCompliance);
