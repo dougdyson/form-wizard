@@ -20,7 +20,7 @@ The current focus of this project is frontend and so will stub out backend servi
 - DONE! TDD data object and draft functions to stub out backend
 - DONE! Install storybook
 - DONE! Install form libraries
-- Wireframe, quick and as lofi as possible
+- DONE! Wireframe, quick and as lofi as possible
 - Create UI end-to-end skeleton/happy path
 - UI, full data
 - polish
