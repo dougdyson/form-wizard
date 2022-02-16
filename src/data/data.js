@@ -85,12 +85,12 @@ const addOwner = (owner) => {
   return owner;
 }
 
-const ownerEmailExists = (ownerEmail) => {
-  return (allOwners.find(owner => owner.email === ownerEmail)) ? true : false;
+const ownerEmailExists = (email) => {
+  return (allOwners.find(owner => owner.email === email)) ? true : false;
 }
 
-const validOwnerPassword = (ownerPassword) => {
-  return (allOwners.find(owner => owner.password === ownerPassword)) ? true : false;
+const validOwnerPassword = (password) => {
+  return (allOwners.find(owner => owner.password === password)) ? true : false;
 }
 
 // ===========================================
