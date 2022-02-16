@@ -3,10 +3,16 @@ This project demonstrates basic React form handling, including UI and rudimentar
 
 The current focus of this project is form handling and so will stub out auth/login and database server for a later time.
 
-## Other Takeaways
-- extensible model, checklisting applicable business rules
+## Scope
+- create account
+- login
+- create business entity
+- update business rule compliance
+
+## Ideas & Takeaways
+- extensible model, business rule with corresponding React component
 - implement backend on Ethereum, particularly the business rules and user's current compliance status with their associated rules.
-- different approach to user onboarding and interaction, very mobile friendly
+- activity feed approach to user onboarding and interaction, very mobile friendly
 - interesting considerations for moving from "nailing it" to "scaling it"
 
 ## TODO:
