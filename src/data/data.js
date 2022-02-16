@@ -82,12 +82,11 @@ const addOwner = (owner) => {
 }
 
 const ownerEmailExists = (ownerEmail) => {
-  if (allOwners.find(owner => owner.email === ownerEmail)) {
-    return true;
-  }
-  else {
-    return false;
-  }
+  return (allOwners.find(owner => owner.email === ownerEmail)) ? true : false;
+}
+
+const validOwnerPassword = (ownerPassword) => {
+  return (allOwners.find(owner => owner.password === ownerPassword)) ? true : false;
 }
 
 // ===========================================
@@ -127,7 +126,7 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 
 module.exports = { 
   allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
-  allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists,
+  allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword,
   allJurisdictions, 
   allRules, getRulesByJurisdictionID, 
   allCompliance, addCompliance, getComplianceByEntityID, updateCompliance 
