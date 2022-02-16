@@ -22,6 +22,10 @@ const getRulesByJurisdictionID = (jurisdictionID) => {
   return allRules.filter(rule => rule.jurisdictionID === jurisdictionID);
 }
 
+const getRuleByID = (ruleID) => {
+  return allRules.find(rule => rule.id === ruleID);
+}
+
 
 // ===========================================
 // ===              ENTITIES               ===
@@ -132,7 +136,7 @@ module.exports = {
   allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
   allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword,
   allJurisdictions, getJurisdictionByID,
-  allRules, getRulesByJurisdictionID, 
+  allRules, getRulesByJurisdictionID, getRuleByID,
   allCompliance, addCompliance, getComplianceByEntityID, updateCompliance 
 };
 
