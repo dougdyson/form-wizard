@@ -9,6 +9,9 @@
 // ===========================================
 const allJurisdictions = require('./jurisdictions.json');
 
+const getJurisdictionByID = (id) => {
+  return allJurisdictions.find(jurisdiction => jurisdiction.id = id);
+}
 
 // ===========================================
 // ===               RULES                 ===
@@ -18,6 +21,7 @@ const allRules = require('./rules.json');
 const getRulesByJurisdictionID = (jurisdictionID) => {
   return allRules.filter(rule => rule.jurisdictionID === jurisdictionID);
 }
+
 
 // ===========================================
 // ===              ENTITIES               ===
@@ -127,7 +131,7 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 module.exports = { 
   allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
   allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword,
-  allJurisdictions, 
+  allJurisdictions, getJurisdictionByID,
   allRules, getRulesByJurisdictionID, 
   allCompliance, addCompliance, getComplianceByEntityID, updateCompliance 
 };
