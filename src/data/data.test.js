@@ -47,9 +47,15 @@ test('adds a new owner', () => {
   const firstName = "Taylor";
   const lastName  = "Jones";
   const email     = "tjones@noreply.com";
+  const password  = "pass123!"
   const phone     = "778-778-8877";
-  const owner = {address, firstName, lastName, email, phone};
+  const owner = {address, firstName, lastName, email, password, phone};
   expect(data.addOwner(owner)).toMatchObject(owner);
+})
+
+test('email address exists', () => {
+  const emailToCheck = "tjones@noreply.com";
+  expect(data.allOwners.emailExists(emailToCheck)).toBe(true);
 })
 
 // =======================================================================

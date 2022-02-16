@@ -4,6 +4,7 @@
     "firstName": "Dale",
     "lastName": "Arden",
     "email": "dale@noreply.com",
+    "password": "Pass123!",
     "telephone": "778-778-7788",
     "timestamp": 1644740667577,
     "active": true
