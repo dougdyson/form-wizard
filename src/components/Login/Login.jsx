@@ -17,10 +17,6 @@ export default function Login() {
     });
   }
 
-  const SayHello = (e) => {
-    alert(e[0]);
-  }
-
   // const validateLogin = (event) => {
   //   event.preventDefault();
   //   let formData = {
@@ -56,7 +52,7 @@ export default function Login() {
       <Button
         variant="contained"
         onClick={() => {
-          SayHello();
+          console.log(state);
         }}
       >
         Login
