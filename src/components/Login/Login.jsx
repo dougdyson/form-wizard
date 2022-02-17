@@ -2,22 +2,21 @@ import React, { useState } from "react";
 // import { loginSchema } from "./LoginValidation";
 import { TextField, Button, Grid } from "@mui/material";
 
+const reducer = (id, val) => {
+   console.log('post', id, val);
+   return
+}
+
 export default function Login() {
 
-  const [value, setValue] = useState({ email: "", password: "" });
+  const [value, setState] = useState({});
   
-  const handleChange = (e) => {
-    const value = e.target.value;
-    const id   = e.target.id
-    console.log(id, value);
-    setValue(
-      {value, id: value}
-    );
-    
+  const handleChange = e => {
+    setState({...value, [e.target.id]: e.target.value})
   }
-
+  
   const validateLogin = () => {
-    console.log(value.email, value.password);
+    // console.log(value.email, value.password);
   }
   
   return (
