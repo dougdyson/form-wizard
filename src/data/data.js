@@ -97,6 +97,17 @@ const validOwnerPassword = (password) => {
   return (allOwners.find(owner => owner.password === password)) ? true : false;
 }
 
+const validLogin = (credentials) => {
+  console.log(credentials);
+  if (!ownerEmailExists(credentials.email)){
+    return false;
+  }
+  if (!validOwnerPassword(credentials.password)){
+    return false;
+  }
+  return true;
+}
+
 // ===========================================
 // ===             COMPLIANCE              ===
 // ===========================================
@@ -134,7 +145,7 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 
 module.exports = { 
   allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
-  allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword,
+  allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword, validLogin,
   allJurisdictions, getJurisdictionByID,
   allRules, getRulesByJurisdictionID, getRuleByID,
   allCompliance, addCompliance, getComplianceByEntityID, updateCompliance 

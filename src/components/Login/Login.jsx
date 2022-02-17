@@ -1,11 +1,7 @@
 import React, { useState } from "react";
+import data from '../../data/data';
 // import { loginSchema } from "./LoginValidation";
 import { TextField, Button, Grid } from "@mui/material";
-
-const reducer = (id, val) => {
-   console.log('post', id, val);
-   return
-}
 
 export default function Login() {
 
@@ -15,8 +11,13 @@ export default function Login() {
     setState({...value, [e.target.id]: e.target.value})
   }
 
-  const validateLogin = () => {
-    console.log("Validate", value.email, value.password);
+  const validateLogin = (credentials) => {
+    if (data.validLogin(credentials)) {
+      return true
+    }
+    else {
+      return false
+    }
   }
   
   return (
@@ -45,8 +46,12 @@ export default function Login() {
         <Button
           variant="contained"
           onClick={() => {
-            console.log(value);
-            validateLogin();
+          if (!validateLogin(value)){
+            alert('Invalid email or password!')
+          }
+          else {
+            alert(`Welcome ${value.email}!`)
+          }
           }}
         >
         Login
