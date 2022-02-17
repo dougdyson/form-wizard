@@ -5,15 +5,25 @@ import { TextField, Button, Grid } from "@mui/material";
 
 export default function Login() {
 
-  const [value, setState] = useState({});
+  const [value, setState] = useState({"email": '', "password": ''});
   
   const handleChange = e => {
     setState({...value, [e.target.id]: e.target.value})
   }
 
-  const validateLogin =  (credentials) => {
+  const validateLogin = (credentials) => {
 
-    const isFormValid = loginSchema.isValid(credentials)
+    const isFormValid = loginSchema.validate(credentials).then(function(value) {
+      console.log(value);
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+
+    if (!isFormValid){
+      console.log('failed Yup validation');
+      return false
+    }
 
     if (validLogin(credentials)) {
       console.log(`${credentials.email} logged in.`);
