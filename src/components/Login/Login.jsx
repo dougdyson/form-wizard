@@ -14,9 +14,9 @@ export default function Login() {
   const handleChange = e => {
     setState({...value, [e.target.id]: e.target.value})
   }
-  
+
   const validateLogin = () => {
-    // console.log(value.email, value.password);
+    console.log("Validate", value.email, value.password);
   }
   
   return (
@@ -45,7 +45,8 @@ export default function Login() {
         <Button
           variant="contained"
           onClick={() => {
-            console.log(value);;
+            console.log(value);
+            validateLogin();
           }}
         >
         Login
