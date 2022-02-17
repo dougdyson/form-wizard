@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import data from '../../data/data';
-// import { loginSchema } from "./LoginValidation";
+import { validLogin } from '../../data/data';
+import { loginSchema } from "./LoginValidation";
 import { TextField, Button, Grid } from "@mui/material";
 
 export default function Login() {
@@ -11,11 +11,16 @@ export default function Login() {
     setState({...value, [e.target.id]: e.target.value})
   }
 
-  const validateLogin = (credentials) => {
-    if (data.validLogin(credentials)) {
+  const validateLogin =  (credentials) => {
+
+    const isFormValid = loginSchema.isValid(credentials)
+
+    if (validLogin(credentials)) {
+      console.log(`${credentials.email} logged in.`);
       return true
     }
     else {
+      console.log(`${credentials.email} login failed.`);
       return false
     }
   }
@@ -26,34 +31,21 @@ export default function Login() {
       direction="column">
       <form noValidate autoComplete="off" onSubmit={validateLogin}>
         <Grid>
-          <TextField 
-            id="email"
-            value={value.email}
-            label="email"
-            variant="outlined"
-            onChange={handleChange}
-          />
+          <TextField id="email" value={value.email} label="email" variant="outlined" onChange={handleChange}
+        />
         </Grid>
         <Grid>
-          <TextField 
-            id="password"
-            value={value.password}
-            label="password" 
-            variant="outlined"
-            onChange={handleChange}
-          />
+          <TextField id="password" value={value.password} label="password" variant="outlined" onChange={handleChange}
+        />
         </Grid>
-        <Button
-          variant="contained"
-          onClick={() => {
-          if (!validateLogin(value)){
-            console.log('Invalid email or password!')
+        <Button variant="contained" onClick={() => {
+          if (validateLogin(value) === false){
+            console.log('Invalid login')
           }
           else {
-            console.log(`Welcome ${value.email}!`)
+            console.log('Valid login')
           }
-          }}
-        >
+        }}>
         Login
         </Button>
       </form>
