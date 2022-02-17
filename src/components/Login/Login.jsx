@@ -1,19 +1,41 @@
 import React from "react";
-import * as yup from 'yup';
+import CssBaseline from '@mui/material/CssBaseline';
+// import * as yup from 'yup';
 import { TextField, Button, Grid } from "@mui/material";
 
-const Login = () => {
+export default function Login() {
+  
   return (
-    <Grid container direction="column" justifyContent="center" alignItems="center">
-      <Grid>
-        <TextField size="small" margin="normal" size="small" id="outlined-basic" label="email" variant="outlined" />
-      </Grid>
-      <Grid>
-        <TextField size="small" id="outlined-basic" label="password" variant="outlined" />
-      </Grid>
-      <Button variant="contained">Login</Button>
+    <Grid 
+    container 
+    direction="column" 
+    justifyContent="center" 
+    alignItems="center">
+      <form noValidate autoComplete="off">
+        <Grid>
+          <TextField 
+            id="email"
+            label="email"
+            variant="outlined"
+            required
+            size="small" 
+            margin="normal" 
+            size="small" 
+            id="outlined-basic" />
+        </Grid>
+        <Grid>
+          <TextField 
+            id="password"
+            label="password" 
+            variant="outlined"
+            required
+            size="small" />
+        </Grid>
+      </form>
+      <Button 
+        variant="contained">
+          Login
+      </Button>
     </Grid>
   )
 }
-
-export default Login;
