@@ -10,10 +10,9 @@ export default function Login() {
     const value = e.target.value;
     const id   = e.target.id
     console.log(id, value);
-    setState(prevState => {
-      // Object.assign would also work
-      return {...prevState, ...updatedValues};
-    })
+    setValue(
+      {value, id: value}
+    );
     
   }
 
