@@ -47,10 +47,10 @@ export default function Login() {
           variant="contained"
           onClick={() => {
           if (!validateLogin(value)){
-            alert('Invalid email or password!')
+            console.log('Invalid email or password!')
           }
           else {
-            alert(`Welcome ${value.email}!`)
+            console.log(`Welcome ${value.email}!`)
           }
           }}
         >

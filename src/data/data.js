@@ -98,7 +98,6 @@ const validOwnerPassword = (password) => {
 }
 
 const validLogin = (credentials) => {
-  console.log(credentials);
   if (!ownerEmailExists(credentials.email)){
     return false;
   }
