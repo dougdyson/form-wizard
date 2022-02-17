@@ -4,10 +4,17 @@ import { TextField, Button, Grid } from "@mui/material";
 
 export default function Login() {
 
-  const [value, setValue] = useState("");
+  const [state, setState] = useState({
+    email: "",
+    password: ""
+  });
   
   const handleChange = (e) => {
-    setValue(e.target.value)
+    const value = e.target.value;
+    setState({
+      ...state,
+      [e.target.id]: value
+    });
   }
 
   const SayHello = (e) => {
@@ -31,7 +38,7 @@ export default function Login() {
         <Grid>
           <TextField 
             id="email"
-            value={value}
+            value={state.email}
             label="email"
             variant="outlined"
             onChange={handleChange}
@@ -40,8 +47,10 @@ export default function Login() {
         <Grid>
           <TextField 
             id="password"
+            value={state.password}
             label="password" 
             variant="outlined"
+            onChange={handleChange}
           />
         </Grid>
       <Button
