@@ -97,7 +97,7 @@ const validOwnerPassword = (password) => {
   return (allOwners.find(owner => owner.password === password)) ? true : false;
 }
 
-const validLogin = (credentials) => {
+const authenticate = (credentials) => {
   if (!ownerEmailExists(credentials.email)){
     return false;
   }
@@ -144,7 +144,7 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 
 module.exports = { 
   allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
-  allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword, validLogin,
+  allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword, authenticate,
   allJurisdictions, getJurisdictionByID,
   allRules, getRulesByJurisdictionID, getRuleByID,
   allCompliance, addCompliance, getComplianceByEntityID, updateCompliance 

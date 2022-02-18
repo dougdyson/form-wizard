@@ -1,45 +1,37 @@
 import React, { useState } from "react";
-import { validLogin } from '../../data/data';
-import { loginSchema } from "./LoginValidation";
 import { TextField, Button, Grid } from "@mui/material";
 
 export default function Login() {
 
-  const [value, setState] = useState({"email": '', "password": ''});
+  const [value, setState] = useState({"email": 'dale@noreply.com', "password": 'Pass123!'});
+  const [valid, setValid] = useState(null);
   
   const handleChange = e => {
     setState({...value, [e.target.id]: e.target.value})
+    // use .name
   }
 
   const validateLogin = (credentials) => {
 
     const isFormValid = loginSchema.validate(credentials).then(function(value) {
-      console.log(value);
+    console.log(value);
+    if (!isFormValid){
+      console.log('failed Yup validation');
+    }
+
     })
     .catch(function(err) {
       console.log(err);
     });
 
-    if (!isFormValid){
-      console.log('failed Yup validation');
-      return false
-    }
-
-    if (validLogin(credentials)) {
-      console.log(`${credentials.email} logged in.`);
-      return true
-    }
-    else {
-      console.log(`${credentials.email} login failed.`);
-      return false
-    }
   }
   
   return (
     <Grid 
       container 
       direction="column">
-      <form noValidate autoComplete="off" onSubmit={validateLogin}>
+      {valid == true ? <p>Success message</p> : <p>Fail</p>}
+      <form noValidate autoComplete="off">
         <Grid>
           <TextField id="email" value={value.email} label="email" variant="outlined" onChange={handleChange}
         />
@@ -49,12 +41,7 @@ export default function Login() {
         />
         </Grid>
         <Button variant="contained" onClick={() => {
-          if (validateLogin(value) === false){
-            console.log('Invalid login')
-          }
-          else {
-            console.log('Valid login')
-          }
+          validateLogin(value)
         }}>
         Login
         </Button>

@@ -4,7 +4,7 @@ import { Container, Grid } from '@mui/material/';
 
 import Header from '../Header/Header';
 // import Compliance from '../Compliance/Compliance';
-import Login from '../Login/Login';
+import Entity from '../Entity/Entity';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Grid>
         <Header />
       </Grid>
-      <Login />
+      <Entity />
     </Container>
   );
 }
