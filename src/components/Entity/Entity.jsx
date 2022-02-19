@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {Grid, TextField, Button } from '@mui/material';
+import {Grid, TextField, Button, Typography } from '@mui/material';
 
 import { entityValidation } from './entityValidation';
 // import { addNewEntity } from '../../data/data';
@@ -33,18 +33,24 @@ function Entity(){
       direction="column"
       justifyContent="center"
       alignItems="center"
+      style={{ padding: 10 }}
     >
       <form>
-        <Grid>
+          <div>
+            <Typography variant='p'>Enter New Company Details</Typography>
+          </div>
+        <Grid style={{ padding: 10 }}>
           <TextField
             name="name" 
-            label="Name" 
+            label="Company Name" 
             value={entity.name}
             helperText={error}
             onChange={handleChange}>
           </TextField>
         </Grid>
-        <Grid>
+        <Grid
+          style={{ padding: 20 }}
+        >
           <Button variant="contained" onClick={handleSubmit}>Submit</Button>
         </Grid>
       </form>
