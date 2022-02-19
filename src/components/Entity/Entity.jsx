@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {Stack, TextField, Button } from '@mui/material';
+import {Grid, TextField, Button } from '@mui/material';
 
 import { entityValidation } from './entityValidation';
 // import { addNewEntity } from '../../data/data';
@@ -28,9 +28,14 @@ function Entity(){
   }
 
   return (
-    <Stack>
+    <Grid
+      container
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+    >
       <form>
-        <div>
+        <Grid>
           <TextField
             name="name" 
             label="Name" 
@@ -38,12 +43,12 @@ function Entity(){
             helperText={error}
             onChange={handleChange}>
           </TextField>
-        </div>
-        <div>
+        </Grid>
+        <Grid>
           <Button variant="contained" onClick={handleSubmit}>Submit</Button>
-        </div>
+        </Grid>
       </form>
-    </Stack>
+    </Grid>
   )
 }
 
