@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import {Grid, TextField, Button, Typography } from '@mui/material';
+import {Grid, TextField, Button, FormLabel } from '@mui/material';
+import 'typeface-roboto'
+import './entity.css'
 
 import { entityValidation } from './entityValidation';
 // import { addNewEntity } from '../../data/data';
@@ -37,7 +39,7 @@ function Entity(){
     >
       <form>
           <div>
-            <Typography variant='p'>Enter New Company Details</Typography>
+            <FormLabel className={"form-label"}>Setup new company</FormLabel>
           </div>
         <Grid style={{ padding: 10 }}>
           <TextField
