@@ -18,8 +18,8 @@ function Entity(){
   const handleSubmit = async () => {
     entityValidation.validate(entity)
       .then((entity) => {
-        console.log(entity)
         setEntity(entity)
+        console.log(entity)
       })
       .catch((error) => {
         setError(error.message)
