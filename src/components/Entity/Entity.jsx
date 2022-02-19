@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import {Grid, TextField, Button } from '@mui/material';
+import {Stack, TextField, Button } from '@mui/material';
 
 import { entityValidation } from './entityValidation';
+// import { addNewEntity } from '../../data/data';
+
 
 function Entity(){
 
@@ -10,23 +12,38 @@ function Entity(){
   const [error, setError] = useState(null);
 
   const handleChange = e => {
-    setEntity({...entity, [e.target.name]: e.target.value})
+    setEntity({...entity, [e.target.name]: e.target.value});
   }
 
   const handleSubmit = async () => {
     entityValidation.validate(entity)
-      .then((entity) => setError())
-      .catch((error) => setError(error.message));
+      .then((entity) => {
+        console.log(entity)
+        setEntity(entity)
+      })
+      .catch((error) => {
+        setError(error.message)
+      }
+    );
   }
 
   return (
-    <Grid>
+    <Stack>
       <form>
-        <p>{error}</p>
-        <TextField name="name" label="name" value={entity.name} onChange={handleChange}></TextField>
-        <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+        <div>
+          <TextField
+            name="name" 
+            label="Name" 
+            value={entity.name}
+            helperText={error}
+            onChange={handleChange}>
+          </TextField>
+        </div>
+        <div>
+          <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+        </div>
       </form>
-    </Grid>
+    </Stack>
   )
 }
 
