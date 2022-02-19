@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {Grid, TextField, Button, FormLabel } from '@mui/material';
+import {Grid, TextField, Button } from '@mui/material';
 import 'typeface-roboto'
 import './entity.css'
 
@@ -38,8 +38,8 @@ function Entity(){
       style={{ padding: 10 }}
     >
       <form>
-          <div>
-            <FormLabel className={"form-label"}>Setup new company</FormLabel>
+          <div className={"form-label"}>
+            Setup new company
           </div>
         <Grid style={{ padding: 10 }}>
           <TextField
@@ -47,6 +47,7 @@ function Entity(){
             label="Company Name" 
             value={entity.name}
             helperText={error}
+            className={"form-label"}
             onChange={handleChange}>
           </TextField>
         </Grid>
