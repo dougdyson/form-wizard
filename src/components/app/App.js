@@ -4,7 +4,6 @@ import { Container, Grid } from '@mui/material/';
 import "./app.css"
 
 import Header from '../Header/Header';
-// import Compliance from '../Compliance/Compliance';
 import Entity from '../Entity/Entity';
 
 function App() {
@@ -13,7 +12,9 @@ function App() {
       <Grid>
         <Header />
       </Grid>
-      <Entity />
+      <Grid>
+        <Entity />
+      </Grid>
     </Container>
   );
 }
