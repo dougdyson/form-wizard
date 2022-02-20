@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {Grid, TextField, Button, Label } from '@mui/material';
+import {Grid, TextField, Button } from '@mui/material';
 
 import { entityValidation } from './entityValidation';
 
