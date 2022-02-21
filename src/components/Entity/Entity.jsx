@@ -10,7 +10,6 @@ import { entityValidation } from './entityValidation';
 function Entity(props){
 
   const address = '04f02b7e8fd5ccc09fb748ddaf00b62782d085c5df59d054cd02f9f55bca6b1efbb5beee1a31ab420d56329eecce6d478826233b941c25961ee3ef66ba12f12b44';
-  console.log(address.length);
 
   const [entity, setEntity] = useState({name: "", address: address})
   const [error, setError] = useState(null);
@@ -23,13 +22,15 @@ function Entity(props){
   }
 
   const handleSubmit = async () => {
-    entityValidation.validate(entity)
+    entityValidation.validate(entity, {abortEarly: false})
       .then((entity) => {
           entity.owner = props.address
           console.log(entity);
           setEntity(entity)
       })
       .catch((error) => {
+        console.log(error.message);
+        console.log(error);
         setError(error)
         setHelperText(error.message)
       }
