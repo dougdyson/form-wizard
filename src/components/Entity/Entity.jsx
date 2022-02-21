@@ -55,6 +55,17 @@ function Entity(props){
         />
       </Grid>
       <Grid>
+        <TextField fullWidth
+          name="address" 
+          label="Wallet Address"
+          value={entity.name}
+          required
+          error={error}
+          helperText={helperText}
+          onChange={handleChange}
+        />
+      </Grid>
+      <Grid>
         <Button variant="contained" onClick={handleSubmit}>
           Submit
         </Button>
