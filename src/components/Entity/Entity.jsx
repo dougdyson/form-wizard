@@ -38,6 +38,7 @@ function Entity(){
       direction="column"
       justifyContent="center"
       alignItems="center"
+      gutterBottom
     >
       <Grid component={"form"} noValidate autoComplete='off' >
         <TextField
