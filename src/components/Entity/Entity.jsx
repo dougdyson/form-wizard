@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {Grid, TextField, Button } from '@mui/material';
+import { Grid, TextField, Button } from '@mui/material';
 import 'typeface-roboto'
 
 import { entityValidation } from './entityValidation';
@@ -24,9 +24,6 @@ function Entity(){
     entityValidation.validate(entity)
       .then((entity) => {
           setEntity(entity)
-          // Add check against banned words
-          // TODO: add to data object
-          // TODO: move to list of user's companies
       })
       .catch((error) => {
         setError(error)
@@ -49,11 +46,10 @@ function Entity(){
         <TextField
           name="name" 
           label="Company Name"
+          value={entity.name}
           required
           error={error}
-          value={entity.name}
           helperText={helperText}
-          fullWidth
           onChange={handleChange}
         />
       </Grid>
