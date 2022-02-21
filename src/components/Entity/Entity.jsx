@@ -9,7 +9,10 @@ import { entityValidation } from './entityValidation';
 
 function Entity(props){
 
-  const [entity, setEntity] = useState({name: ""})
+  const address = '04f02b7e8fd5ccc09fb748ddaf00b62782d085c5df59d054cd02f9f55bca6b1efbb5beee1a31ab420d56329eecce6d478826233b941c25961ee3ef66ba12f12b44';
+  console.log(address.length);
+
+  const [entity, setEntity] = useState({name: "", address: address})
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState(' ');
 
@@ -48,6 +51,17 @@ function Entity(props){
           name="name" 
           label="Company Name"
           value={entity.name}
+          required
+          error={error}
+          helperText={helperText}
+          onChange={handleChange}
+        />
+      </Grid>
+      <Grid>
+        <TextField fullWidth
+          name="address" 
+          label="Wallet Address"
+          value={entity.address}
           required
           error={error}
           helperText={helperText}
