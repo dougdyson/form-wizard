@@ -5,7 +5,6 @@ import 'typeface-roboto'
 
 import { entityValidation } from './entityValidation';
 // import { addNewEntity } from '../../data/data';
-// import { Typography } from '@mui/material/';
 
 
 function Entity(){
@@ -33,17 +32,18 @@ function Entity(){
   }
 
   return (
+    <div>
     <Grid
       container
       component={"form"} 
       noValidate 
       autoComplete='off'
       direction="column"
-      justifyContent="center"
-      alignItems="center"
+      justifyContent="space-evenly"
+      alignItems="stretch"
     >
-      <Grid >
-        <TextField
+      <Grid>
+        <TextField fullWidth
           name="name" 
           label="Company Name"
           value={entity.name}
@@ -59,6 +59,7 @@ function Entity(){
         </Button>
       </Grid>
     </Grid>
+    </div>
   )
 }
 
