@@ -7,7 +7,7 @@ import { entityValidation } from './entityValidation';
 // import { addNewEntity } from '../../data/data';
 
 
-function Entity(){
+function Entity(props){
 
   const [entity, setEntity] = useState({name: ""})
   const [error, setError] = useState(null);
@@ -22,6 +22,8 @@ function Entity(){
   const handleSubmit = async () => {
     entityValidation.validate(entity)
       .then((entity) => {
+          entity.owner = props.address
+          console.log(entity);
           setEntity(entity)
       })
       .catch((error) => {
