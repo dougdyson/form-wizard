@@ -32,7 +32,6 @@ function Entity(){
   }
 
   return (
-    <div>
     <Grid
       container
       component={"form"} 
@@ -59,7 +58,6 @@ function Entity(){
         </Button>
       </Grid>
     </Grid>
-    </div>
   )
 }
 
