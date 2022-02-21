@@ -24,6 +24,9 @@ function Entity(){
     entityValidation.validate(entity)
       .then((entity) => {
           setEntity(entity)
+          // Add check against banned words
+          // TODO: add to data object
+          // TODO: move to list of user's companies
       })
       .catch((error) => {
         setError(error)
@@ -35,11 +38,14 @@ function Entity(){
   return (
     <Grid
       container
+      component={"form"} 
+      noValidate 
+      autoComplete='off'
       direction="column"
       justifyContent="center"
       alignItems="center"
     >
-      <Grid component={"form"} noValidate autoComplete='off' >
+      <Grid >
         <TextField
           name="name" 
           label="Company Name"
@@ -52,7 +58,9 @@ function Entity(){
         />
       </Grid>
       <Grid>
-        <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+        <Button variant="contained" onClick={handleSubmit}>
+          Submit
+        </Button>
       </Grid>
     </Grid>
   )
