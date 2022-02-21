@@ -12,8 +12,11 @@ function Entity(){
 
   const [entity, setEntity] = useState({name: ""})
   const [error, setError] = useState(null);
+  const [helperMessage, setHelperMessage] = useState(null);
 
   const handleChange = e => {
+    setError(null)
+    setHelperMessage(null)
     setEntity({...entity, [e.target.name]: e.target.value});
   }
 
@@ -21,10 +24,10 @@ function Entity(){
     entityValidation.validate(entity)
       .then((entity) => {
           setEntity(entity)
-          console.log(entity)
       })
       .catch((error) => {
-        setError(error.message)
+        setError(error)
+        setHelperMessage(error.message)
       }
     );
   }
@@ -35,25 +38,22 @@ function Entity(){
       direction="column"
       justifyContent="center"
       alignItems="center"
-      style={{ padding: 10 }}
     >
-      <form>
-        <Grid style={{ padding: 10 }}>
-          <TextField
-            name="name" 
-            label="Company Name" 
-            value={entity.name}
-            helperText={error ? error : ' '}
-            className={"form-label"}
-            onChange={handleChange}>
-          </TextField>
-        </Grid>
-        <Grid
-          style={{ padding: 20 }}
-        >
-          <Button variant="contained" onClick={handleSubmit}>Submit</Button>
-        </Grid>
-      </form>
+      <Grid component={"form"} noValidate autoComplete='off' >
+        <TextField
+          name="name" 
+          label="Company Name"
+          required
+          error={error ? error : null}
+          value={entity.name}
+          helperText={helperMessage}
+          fullWidth
+          onChange={handleChange}
+        />
+      </Grid>
+      <Grid>
+        <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+      </Grid>
     </Grid>
   )
 }
