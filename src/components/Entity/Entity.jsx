@@ -12,11 +12,11 @@ function Entity(){
 
   const [entity, setEntity] = useState({name: ""})
   const [error, setError] = useState(null);
-  const [helperMessage, setHelperMessage] = useState(null);
+  const [helperText, setHelperText] = useState(' ');
 
   const handleChange = e => {
     setError(null)
-    setHelperMessage(null)
+    setHelperText(' ')
     setEntity({...entity, [e.target.name]: e.target.value});
   }
 
@@ -27,7 +27,7 @@ function Entity(){
       })
       .catch((error) => {
         setError(error)
-        setHelperMessage(error.message)
+        setHelperText(error.message)
       }
     );
   }
@@ -38,16 +38,15 @@ function Entity(){
       direction="column"
       justifyContent="center"
       alignItems="center"
-      gutterBottom
     >
       <Grid component={"form"} noValidate autoComplete='off' >
         <TextField
           name="name" 
           label="Company Name"
           required
-          error={error ? error : null}
+          error={error}
           value={entity.name}
-          helperText={helperMessage}
+          helperText={helperText}
           fullWidth
           onChange={handleChange}
         />
