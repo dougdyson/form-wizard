@@ -15,7 +15,7 @@ function EntityCard(props) {
         <CardContent>
           <Typography>{entity.name}, LLC</Typography>
           <Typography>{jurisdiction.name}</Typography>
-          <Typography>{entity.address}</Typography>
+          <Typography noWrap>{entity.address}</Typography>
         </CardContent>
       </Card>
     </Grid>
