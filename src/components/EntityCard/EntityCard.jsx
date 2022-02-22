@@ -7,6 +7,7 @@ function EntityCard(props) {
 
   const entity = getEntityDetailsByID(props.id)
   const jurisdiction = getJurisdictionByID(entity.jurisdictionID)
+
   
   return (
 

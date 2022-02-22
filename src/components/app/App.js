@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material/';
 import EntityList from '../EntityList/EntityList';
-import EntityCard from '../EntityCard/EntityCard';
 
 function App() {
 
