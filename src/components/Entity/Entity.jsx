@@ -20,7 +20,7 @@ function Entity(props){
 
   const handleChange = e => {
     // reset any error messaging
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setError(null);
     setAddressError(null)
     setHelperText(' ')
@@ -29,10 +29,11 @@ function Entity(props){
     setDisabled(null)
   }
 
-  const handleSubmit = async (e) => {
+  const handleBlur = async (e) => {
       entityValidation.validate(entity, {abortEarly: false})
         .then((entity) => {
             // entity.owner = props.address
+            console.log(e);
             setEntity(entity)
         })
         .catch((errors) => {
@@ -82,7 +83,7 @@ function Entity(props){
           error={error}
           helperText={helperText}
           onChange={handleChange}
-          onBlur={handleSubmit}
+          onBlur={handleBlur}
         />
       </Grid>
       <Grid>
@@ -94,13 +95,13 @@ function Entity(props){
           required
           helperText={addressHelpText}
           onChange={handleChange}
-          onBlur={handleSubmit}
+          onBlur={handleBlur}
         />
       </Grid>
       <Grid>
         <Button 
           variant="contained" 
-          onClick={handleSubmit}
+          onClick={handleBlur}
           disabled={disabled}
         >
         Submit
