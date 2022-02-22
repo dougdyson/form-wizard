@@ -48,6 +48,14 @@ const isUniqueEntityName = (entityName) => {
   return true
 };
 
+const isUniqueWallet = (walletAddress) => {
+  const duplicate = allEntities.find(entity => entity.address === walletAddress)
+  if (duplicate) {
+    return false
+  }
+  return true
+};
+
 const addNewEntity = (newEntity) => {
   
   // TODO: check jurisdiction_id exists?
@@ -146,7 +154,7 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 }
 
 module.exports = { 
-  allEntities, addNewEntity, isUniqueEntityName, getEntityDetailsByID, getEntitiesForOwner,
+  allEntities, addNewEntity, isUniqueEntityName, isUniqueWallet, getEntityDetailsByID, getEntitiesForOwner,
   allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword, authenticate,
   allJurisdictions, getJurisdictionByID,
   allRules, getRulesByJurisdictionID, getRuleByID,

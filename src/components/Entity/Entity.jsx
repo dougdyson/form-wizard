@@ -4,7 +4,7 @@ import { Grid, TextField, Button, Typography } from '@mui/material';
 import 'typeface-roboto'
 
 import { entityValidation } from './entityValidation';
-import { isUniqueEntityName, addNewEntity } from '../../data/data';
+import { isUniqueEntityName, isUniqueWallet, addNewEntity } from '../../data/data';
 
 
 function Entity(props){
@@ -60,21 +60,24 @@ function Entity(props){
 
   const handleClick = () => {
 
-    if (isUniqueEntityName(entity.name)) {
-      
-      entity.owner = owner;
-     
-      addNewEntity(entity);
-      // change state to entity list view
-
-    }
-    else if (!isUniqueEntityName(entity.name)){
-      
-      setHelperText('Name already in use. Make a new one.')
+    if (!isUniqueEntityName(entity.name)){
+      setHelperText('Name already in use')
       setError(true)
       setDisabled(true)
-    
     }
+
+    if (!isUniqueWallet(entity.address)){
+      setAddressHelperText('Address already in use')
+      setAddressError(true)
+      setDisabled(true)
+    }
+
+    if (error === null && addressError === null) {
+      entity.owner = owner;
+      addNewEntity(entity);
+      // open entity list component
+    }
+
   }
 
   return (
