@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Grid, IconButton } from '@mui/material/';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { Container, Grid } from '@mui/material/';
+
 import EntityList from '../EntityList/EntityList';
 
 function App() {
@@ -11,11 +11,6 @@ function App() {
     <Container>
       <Grid>
         <EntityList owner={owner} />
-      </Grid>
-      <Grid>
-        <IconButton>
-          <AddCircleIcon fontSize="large" color="primary" />
-        </IconButton>
       </Grid>
     </Container>
   );
