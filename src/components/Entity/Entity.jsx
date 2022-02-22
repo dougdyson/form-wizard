@@ -40,12 +40,6 @@ function Entity(props){
         console.log(JSON.stringify(errors));
         console.log(errors);
         const inner = errors.inner;
-
-        // would yo uplease make payment for mentroing?
-        // we have spent 45mins, how much?
-        // $100, do yo uhave paypal?
-        // my  paypal is smartcode121@outlook.com
-        // pleawse don't say paypal on codemenmtor.
         
         inner.forEach(item => {
           console.log("item", item.path, item.errors)
