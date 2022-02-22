@@ -31,7 +31,7 @@ function Entity(props){
   const handleSubmit = async () => {
     entityValidation.validate(entity, {abortEarly: false})
       .then((entity) => {
-          // entity.owner = props.address
+        
           setEntity(entity)
       })
       .catch((errors) => {
