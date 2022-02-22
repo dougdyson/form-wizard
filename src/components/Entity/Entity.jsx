@@ -30,45 +30,51 @@ function Entity(props){
   }
 
   const handleBlur = async (e) => {
-      entityValidation.validate(entity, {abortEarly: false})
-        .then((entity) => {
-            setEntity(entity)
-        })
-        .catch((errors) => {
-          const inner = errors.inner;
-          
-          inner.forEach(item => {
-            if( item.path === "name" ) 
-            {         
-              setError(item);
-              setHelperText(item.errors);
-            }
+      
+    entityValidation.validate(entity, {abortEarly: false})
+      .then((entity) => {
+          setEntity(entity)
+      })
+      .catch((errors) => {
+        const inner = errors.inner;
+        
+        inner.forEach(item => {
+          if( item.path === "name" ) 
+          {         
+            setError(item);
+            setHelperText(item.errors);
+          }
 
-            if( item.path === "address" )
-            {
-              setAddressError(item);
-              setHelperText(item.errors);
-              setError(true)
-            }
-          });
-          
-          setDisabled(true)
-          
-        }
-      );
+          if( item.path === "address" )
+          {
+            setAddressError(item);
+            setHelperText(item.errors);
+            setError(true)
+          }
+        });
+        
+        setDisabled(true)
+        
+      }
+    );
   }
 
   const handleClick = () => {
 
     if (isUniqueEntityName(entity.name)) {
+      
       entity.owner = owner;
+     
       addNewEntity(entity);
       // change state to entity list view
+
     }
     else if (!isUniqueEntityName(entity.name)){
+      
       setHelperText('Name already in use. Make a new one.')
       setError(true)
       setDisabled(true)
+    
     }
   }
 
