@@ -1,7 +1,9 @@
 import React from 'react';
-import { Container, Grid } from '@mui/material/';
+import { Container, Stack, Grid } from '@mui/material/';
 
+import AppBar from '@mui/material/AppBar';
 import EntityList from '../EntityList/EntityList';
+
 
 function App() {
 
@@ -9,6 +11,9 @@ function App() {
 
   return (
     <Container>
+      <Grid>
+        <AppBar />
+      </Grid>
       <Grid>
         <EntityList owner={owner} />
       </Grid>
