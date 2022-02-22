@@ -4,7 +4,7 @@ import { Grid, TextField, Button, Typography } from '@mui/material';
 import 'typeface-roboto'
 
 import { entityValidation } from './entityValidation';
-import { addNewEntity } from '../../data/data';
+import { isUniqueEntityName, addNewEntity } from '../../data/data';
 
 
 function Entity(props){
@@ -21,7 +21,6 @@ function Entity(props){
 
   const handleChange = e => {
     // reset any error messaging
-    // console.log(e.target.value);
     setError(null);
     setAddressError(null)
     setHelperText(' ')
@@ -33,7 +32,6 @@ function Entity(props){
   const handleBlur = async (e) => {
       entityValidation.validate(entity, {abortEarly: false})
         .then((entity) => {
-            // entity.owner = props.address
             setEntity(entity)
         })
         .catch((errors) => {
@@ -49,7 +47,8 @@ function Entity(props){
             if( item.path === "address" )
             {
               setAddressError(item);
-              setAddressHelperText(item.errors);
+              setHelperText(item.errors);
+              setError(true)
             }
           });
           
@@ -60,10 +59,16 @@ function Entity(props){
   }
 
   const handleClick = () => {
-    if (!error) {
+
+    if (isUniqueEntityName(entity.name)) {
       entity.owner = owner;
-      const newEntity = addNewEntity(entity);
-      console.log(newEntity);
+      addNewEntity(entity);
+      // change state to entity list view
+    }
+    else if (!isUniqueEntityName(entity.name)){
+      setHelperText('Name already in use. Make a new one.')
+      setError(true)
+      setDisabled(true)
     }
   }
 
