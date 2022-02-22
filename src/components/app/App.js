@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material/';
-import Entity from '../Entity/Entity';
+import EntityCard from '../EntityCard/EntityCard';
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <Container>
       <Grid>
-        <Entity address={userID} />
+        <EntityCard id={1} />
       </Grid>
     </Container>
   );

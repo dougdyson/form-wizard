@@ -7,7 +7,7 @@ import { entityValidation } from './entityValidation';
 import { isUniqueEntityName, isUniqueWallet, addNewEntity } from '../../data/data';
 
 
-function Entity(props){
+function Entity(props) {
 
   const owner = '04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1'
   // const address = '04f02b7e8fd5ccc09fb748ddaf00b62782d085c5df59d054cd02f9f55bca6b1efbb5beee1a31ab420d56329eecce6d478826233b941c25961ee3ef66ba12f12b44';
