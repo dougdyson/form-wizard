@@ -60,6 +60,10 @@ function Entity(props) {
 
   const handleClick = () => {
 
+    console.log(entity.name);
+
+    console.log('CE - handleclick - entity', entity);
+
     if (!isUniqueEntityName(entity.name))
     {
       setHelperText('Name already in use')
@@ -78,7 +82,7 @@ function Entity(props) {
       // entity.owner = props.owner
       entity.owner = owner;
       const newData = addNewEntity(entity);
-      props.setEntities(prevState => [...prevState, newData]);
+      props.setEntities(prevState => [newData, ...prevState]);
       setEntity(initialState);
       props.toggleModal();
       // open entity list component

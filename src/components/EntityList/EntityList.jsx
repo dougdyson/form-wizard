@@ -16,9 +16,7 @@ function EntityList(props) {
     const entitiesData = getEntitiesForOwner(props.owner);
     setEntities(entitiesData);
   }
-
-  console.log('entities==>>)', entities);
-  
+    
   useEffect(() => {
     getEntities();
   }, []);
