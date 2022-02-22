@@ -10,7 +10,7 @@
 const allJurisdictions = require('./jurisdictions.json');
 
 const getJurisdictionByID = (id) => {
-  return allJurisdictions.find(jurisdiction => jurisdiction.id = id);
+  return allJurisdictions.find(jurisdiction => jurisdiction.id === id);
 }
 
 // ===========================================
