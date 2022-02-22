@@ -10,7 +10,7 @@
 const allJurisdictions = require('./jurisdictions.json');
 
 const getJurisdictionByID = (id) => {
-  return allJurisdictions.find(jurisdiction => jurisdiction.id = id);
+  return allJurisdictions.find(jurisdiction => jurisdiction.id === id);
 }
 
 // ===========================================
@@ -41,9 +41,14 @@ const getEntitiesForOwner = (owner) => {
 };
 
 const isUniqueEntityName = (entityName) => {
+
+  console.log('DATA - iUEN - allEntities', allEntities);
+  console.log('DATA - iUEN - entityName', entityName);
   const duplicate = allEntities.find(entity => entity.name === entityName)
+
+  console.log('DATA - iUEN - duplicate', duplicate );
   
-  if (duplicate) 
+  if (duplicate.name.length) 
   {
     return false
   }
