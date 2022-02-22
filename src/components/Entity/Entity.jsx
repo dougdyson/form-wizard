@@ -19,7 +19,7 @@ function Entity(props){
   const [addressHelpText, setAddressHelperText] = useState(' ')
 
   const handleChange = e => {
-    console.log(e.target.name);
+    console.log("handleChange", e.target.name);
     // reset any error messaging
     setError(null);
     setAddressError(null)
@@ -30,16 +30,40 @@ function Entity(props){
   }
 
   const handleSubmit = async () => {
-    entityValidation.validate(entity)
+    console.log("Entity1", entity);
+    entityValidation.validate(entity, {abortEarly: false})
       .then((entity) => {
           // entity.owner = props.address
           setEntity(entity)
       })
       .catch((errors) => {
+        console.log(JSON.stringify(errors));
         console.log(errors);
-        setError(errors)
+        const inner = errors.inner;
+
+        // would yo uplease make payment for mentroing?
+        // we have spent 45mins, how much?
+        // $100, do yo uhave paypal?
+        // my  paypal is smartcode121@outlook.com
+        // pleawse don't say paypal on codemenmtor.
+        
+        inner.forEach(item => {
+          console.log("item", item.path, item.errors)
+          if( item.path == "name" ) 
+          {         
+            setError(item);
+            setHelperText(item.errors);            
+          }
+
+          if( item.path == "address" )
+          {
+            setAddressError(item);
+            setAddressHelperText(item.errors);
+          }
+        });
+        
         setDisabled(true)
-        setHelperText(errors.message)
+        
       }
     );
   }
