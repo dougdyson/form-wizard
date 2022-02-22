@@ -42,7 +42,9 @@ const getEntitiesForOwner = (owner) => {
 
 const isUniqueEntityName = (entityName) => {
   const duplicate = allEntities.find(entity => entity.name === entityName)
-  if (duplicate) {
+  
+  if (duplicate) 
+  {
     return false
   }
   return true
@@ -50,9 +52,12 @@ const isUniqueEntityName = (entityName) => {
 
 const isUniqueWallet = (walletAddress) => {
   const duplicate = allEntities.find(entity => entity.address === walletAddress)
-  if (duplicate) {
+  
+  if (duplicate) 
+  {
     return false
   }
+  
   return true
 };
 
@@ -109,10 +114,12 @@ const validOwnerPassword = (password) => {
 }
 
 const authenticate = (credentials) => {
-  if (!ownerEmailExists(credentials.email)){
+  if (!ownerEmailExists(credentials.email))
+  {
     return false;
   }
-  if (!validOwnerPassword(credentials.password)){
+  if (!validOwnerPassword(credentials.password))
+  {
     return false;
   }
   return true;

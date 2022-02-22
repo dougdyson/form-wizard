@@ -60,19 +60,22 @@ function Entity(props){
 
   const handleClick = () => {
 
-    if (!isUniqueEntityName(entity.name)){
+    if (!isUniqueEntityName(entity.name))
+    {
       setHelperText('Name already in use')
       setError(true)
       setDisabled(true)
     }
 
-    if (!isUniqueWallet(entity.address)){
+    if (!isUniqueWallet(entity.address))
+    {
       setAddressHelperText('Address already in use')
       setAddressError(true)
       setDisabled(true)
     }
 
-    if (error === null && addressError === null) {
+    if (error === null && addressError === null)
+    {
       entity.owner = owner;
       addNewEntity(entity);
       // open entity list component
