@@ -41,15 +41,14 @@ function Entity(props){
         inner.forEach(item => {
           if( item.path === "name" ) 
           {         
-            setError(item);
+            setError(true);
             setHelperText(item.errors);
           }
 
           if( item.path === "address" )
           {
-            setAddressError(item);
-            setHelperText(item.errors);
-            setError(true)
+            setAddressError(true);
+            setAddressHelperText(item.errors);
           }
         });
         
