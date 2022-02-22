@@ -20,6 +20,7 @@ function Entity(props){
 
   const handleChange = e => {
     // reset any error messaging
+    console.log(e.target.value);
     setError(null);
     setAddressError(null)
     setHelperText(' ')
@@ -28,33 +29,35 @@ function Entity(props){
     setDisabled(null)
   }
 
-  const handleSubmit = async () => {
-    entityValidation.validate(entity, {abortEarly: false})
-      .then((entity) => {
-          // entity.owner = props.address
-          setEntity(entity)
-      })
-      .catch((errors) => {
-        const inner = errors.inner;
-        
-        inner.forEach(item => {
-          if( item.path === "name" ) 
-          {         
-            setError(item);
-            setHelperText(item.errors);
-          }
+  const handleSubmit = async (e) => {
+    // if (e.target.value > 0) {
+      entityValidation.validate(entity, {abortEarly: false})
+        .then((entity) => {
+            // entity.owner = props.address
+            setEntity(entity)
+        })
+        .catch((errors) => {
+          const inner = errors.inner;
+          
+          inner.forEach(item => {
+            if( item.path === "name" ) 
+            {         
+              setError(item);
+              setHelperText(item.errors);
+            }
 
-          if( item.path === "address" )
-          {
-            setAddressError(item);
-            setAddressHelperText(item.errors);
-          }
-        });
-        
-        setDisabled(true)
-        
-      }
-    );
+            if( item.path === "address" )
+            {
+              setAddressError(item);
+              setAddressHelperText(item.errors);
+            }
+          });
+          
+          setDisabled(true)
+          
+        }
+      );
+    // }
   }
 
   return (
