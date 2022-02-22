@@ -31,20 +31,20 @@ function Entity(props){
   const handleSubmit = async () => {
     entityValidation.validate(entity, {abortEarly: false})
       .then((entity) => {
-        
+          // entity.owner = props.address
           setEntity(entity)
       })
       .catch((errors) => {
         const inner = errors.inner;
         
         inner.forEach(item => {
-          if( item.path == "name" ) 
+          if( item.path === "name" ) 
           {         
             setError(item);
             setHelperText(item.errors);
           }
 
-          if( item.path == "address" )
+          if( item.path === "address" )
           {
             setAddressError(item);
             setAddressHelperText(item.errors);
