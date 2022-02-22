@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Grid, TextField, Button } from '@mui/material';
+import { Grid, TextField, Button, Typography } from '@mui/material';
 import 'typeface-roboto'
 
 import { entityValidation } from './entityValidation';
@@ -41,7 +41,7 @@ function Entity(props){
           if( item.path == "name" ) 
           {         
             setError(item);
-            setHelperText(item.errors);            
+            setHelperText(item.errors);
           }
 
           if( item.path == "address" )
@@ -67,6 +67,11 @@ function Entity(props){
       justifyContent="space-evenly"
       alignItems="stretch"
     >
+      <Grid>
+        <Typography variant="overline">
+          Create Company
+        </Typography>
+      </Grid>
       <Grid>
         <TextField fullWidth
           name="name" 
