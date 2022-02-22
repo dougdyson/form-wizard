@@ -43,10 +43,10 @@ const getEntitiesForOwner = (owner) => {
 const addNewEntity = (newEntity) => {
   
   // check for duplicate entity names
-  if (allEntities.find(entity => entity.name === newEntity.name)){
-    // throw error
-    return false;
-  }
+  // if (allEntities.find(entity => entity.name === newEntity.name)){
+  //   // throw error
+  //   return false;
+  // }
   // TODO: check jurisdiction_id exists?
   // TODO: check owner exists?
   // CONFIRM: check wallet address not already in use??
