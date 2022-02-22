@@ -36,9 +36,8 @@ function Entity(props){
           setEntity(entity)
       })
       .catch((errors) => {
-        const inner = errors.inner;
         
-        inner.forEach(item => {
+        errors.inner.forEach(item => {
           if( item.path === "name" ) 
           {         
             setError(true);
@@ -64,23 +63,23 @@ function Entity(props){
     {
       setHelperText('Name already in use')
       setError(true)
-      setDisabled(true)
     }
 
     if (!isUniqueWallet(entity.address))
     {
       setAddressHelperText('Address already in use')
       setAddressError(true)
-      setDisabled(true)
     }
-
+    
     if (error === null && addressError === null)
     {
+      // get owner from context
       entity.owner = owner;
       addNewEntity(entity);
       // open entity list component
     }
-
+    setDisabled(true)
+    
   }
 
   return (
