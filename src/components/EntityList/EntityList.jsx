@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Grid, Typography } from "@mui/material";
 import { getEntitiesForOwner } from '../../data/data';
 import EntityCard from '../EntityCard/EntityCard';
 
@@ -17,9 +18,9 @@ function EntityList(props) {
   }, [])
 
   return (
-    <div>
+    <Grid>
        {entities.map(entity => <EntityCard key={entity.id} id={entity.id}/>)}
-    </div>
+    </Grid>
   )
 }
 export default EntityList
