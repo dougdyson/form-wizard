@@ -9,30 +9,37 @@ import { entityValidation } from './entityValidation';
 
 function Entity(props){
 
-  const address = '04f02b7e8fd5ccc09fb748ddaf00b62782d085c5df59d054cd02f9f55bca6b1efbb5beee1a31ab420d56329eecce6d478826233b941c25961ee3ef66ba12f12b44';
+  // const address = '04f02b7e8fd5ccc09fb748ddaf00b62782d085c5df59d054cd02f9f55bca6b1efbb5beee1a31ab420d56329eecce6d478826233b941c25961ee3ef66ba12f12b44';
 
-  const [entity, setEntity] = useState({name: "", address: address})
+  const [entity, setEntity] = useState({name: "", address: ""})
   const [error, setError] = useState(null);
+  const [addressError, setAddressError] = useState(null)
   const [helperText, setHelperText] = useState(' ');
+  const [disabled, setDisabled] = useState(true)
+  const [addressHelpText, setAddressHelperText] = useState(' ')
 
   const handleChange = e => {
-    setError(null)
+    console.log(e.target.name);
+    // reset any error messaging
+    setError(null);
+    setAddressError(null)
     setHelperText(' ')
+    setAddressHelperText(' ')
     setEntity({...entity, [e.target.name]: e.target.value});
+    setDisabled(null)
   }
 
   const handleSubmit = async () => {
-    entityValidation.validate(entity, {abortEarly: false})
+    entityValidation.validate(entity)
       .then((entity) => {
-          entity.owner = props.address
-          console.log(entity);
+          // entity.owner = props.address
           setEntity(entity)
       })
-      .catch((error) => {
-        console.log(error.message);
-        console.log(error);
-        setError(error)
-        setHelperText(error.message)
+      .catch((errors) => {
+        console.log(errors);
+        setError(errors)
+        setDisabled(true)
+        setHelperText(errors.message)
       }
     );
   }
@@ -56,22 +63,28 @@ function Entity(props){
           error={error}
           helperText={helperText}
           onChange={handleChange}
+          onBlur={handleSubmit}
         />
       </Grid>
       <Grid>
         <TextField fullWidth
+          error={addressError}
           name="address" 
           label="Wallet Address"
           value={entity.address}
           required
-          error={error}
-          helperText={helperText}
+          helperText={addressHelpText}
           onChange={handleChange}
+          onBlur={handleSubmit}
         />
       </Grid>
       <Grid>
-        <Button variant="contained" onClick={handleSubmit}>
-          Submit
+        <Button 
+          variant="contained" 
+          onClick={handleSubmit}
+          disabled={disabled}
+        >
+        Submit
         </Button>
       </Grid>
     </Grid>
