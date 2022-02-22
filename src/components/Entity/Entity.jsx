@@ -19,7 +19,6 @@ function Entity(props){
   const [addressHelpText, setAddressHelperText] = useState(' ')
 
   const handleChange = e => {
-    console.log("handleChange", e.target.name);
     // reset any error messaging
     setError(null);
     setAddressError(null)
@@ -30,19 +29,15 @@ function Entity(props){
   }
 
   const handleSubmit = async () => {
-    console.log("Entity1", entity);
     entityValidation.validate(entity, {abortEarly: false})
       .then((entity) => {
           // entity.owner = props.address
           setEntity(entity)
       })
       .catch((errors) => {
-        console.log(JSON.stringify(errors));
-        console.log(errors);
         const inner = errors.inner;
         
         inner.forEach(item => {
-          console.log("item", item.path, item.errors)
           if( item.path == "name" ) 
           {         
             setError(item);
