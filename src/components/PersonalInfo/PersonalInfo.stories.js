@@ -1,10 +1,10 @@
 import React from "react";
 
-import { PersonalInfo } from '../PersonalInfo/PersonalInfo'
+import { PersonalInfo } from './PersonalInfo';
 
 export default {
-  title: 'BlockDocs/Personalnfo',
+  title: 'BlockDocs/Personal',
   component: PersonalInfo,
 }
 
-export const PersonalInfo = <PersonalInfo />
+export const Personal = <PersonalInfo />
