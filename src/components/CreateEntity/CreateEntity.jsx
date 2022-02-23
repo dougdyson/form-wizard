@@ -112,63 +112,61 @@ function Entity(props) {
       alignItems="stretch"
     >
       <Modal open={showModal} onClose={toggleModal}>
-      <Box sx={style}>
-      <Grid>
-        <Typography variant="overline">
-          Create
-        </Typography>
-      </Grid>
-      <Grid>
-        <TextField fullWidth
-          name="name" 
-          label="Company Name"
-          value={entity.name}
-          required
-          error={error}
-          helperText={helperText}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
-      </Grid>
-      <Grid>
-        <TextField fullWidth
-          error={addressError}
-          name="address" 
-          label="Wallet Address"
-          value={entity.address}
-          required
-          helperText={addressHelpText}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
-      </Grid>
-      <Grid>
-        <Select fullWidth
-          name="jurisdictionID" 
-          label="Jurisdiction"
-          value={entity.jurisdictionID}
-          required
-          onChange={handleChange}
-          onBlur={handleBlur}
-        >
-          <MenuItem value={""}>Select One</MenuItem>
-          {allJurisdictions.map(j => <MenuItem key={j.id} value={j.id}>{j.name}</MenuItem>)}
-        </Select>
-      </Grid>      
-      <Grid>
-        <Button 
-          variant="contained" 
-          onClick={handleClick}
-          disabled={disabled}
-        >
-        Submit
-        </Button>
-      </Grid>
-      </Box>
+        <Box sx={style}>
+          <Grid>
+            <Typography variant="overline">
+              Create
+            </Typography>
+          </Grid>
+          <Grid>
+            <TextField fullWidth
+              name="name" 
+              label="Company Name"
+              value={entity.name}
+              required
+              error={error}
+              helperText={helperText}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </Grid>
+          <Grid>
+            <TextField fullWidth
+              error={addressError}
+              name="address" 
+              label="Wallet Address"
+              value={entity.address}
+              required
+              helperText={addressHelpText}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </Grid>
+          <Grid>
+            <Select fullWidth
+              name="jurisdictionID" 
+              label="Jurisdiction"
+              value={entity.jurisdictionID}
+              required
+              onChange={handleChange}
+              onBlur={handleBlur}
+            >
+              <MenuItem value={""}>Select One</MenuItem>
+              {allJurisdictions.map(j => <MenuItem key={j.id} value={j.id}>{j.name}</MenuItem>)}
+            </Select>
+          </Grid>      
+          <Grid>
+            <Button 
+              variant="contained" 
+              onClick={handleClick}
+              disabled={disabled}
+            >
+            Submit
+            </Button>
+          </Grid>
+        </Box>
       </Modal>
-
     </Grid>
-    
   )
 }
 

@@ -3,8 +3,8 @@ import React from "react";
 import UpdateRegOwner from './UpdateRegOwner'
 
 export default {
-  title: 'UpdateRegOwner',
+  title: 'BlockDocs/UpdateRegOwner',
   component: UpdateRegOwner,
 };
 
-export const UpdateRegOwner = () => <UpdateRegOwner />
+export const UpdateForm = () => <UpdateRegOwner />
