@@ -5,7 +5,7 @@ import { Grid, TextField, Button, Typography, Select, MenuItem, Modal, Box } fro
 import 'typeface-roboto'
 
 
-export default function UpdateContactInfo(){
+export default function UpdateContactInfo(props){
   return(
     <Grid 
       container
