@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-import { Grid, TextField, Button, Typography, Select, MenuItem, Modal, Box } from '@mui/material';
+import { Grid, TextField } from '@mui/material';
+import { FormGroup } from '@mui/material';
+import { FormControlLabel } from '@mui/material';
+import { Checkbox } from '@mui/material';
 import 'typeface-roboto'
 
 export default function(props) {
@@ -22,9 +25,6 @@ export default function(props) {
       </Grid>
       <Grid>
         <TextField label="Industry Dropdown" fullsize required></TextField>
-      </Grid>
-      <Grid>
-        <TextField label="I Hereby Checkbox" fullsize required></TextField>
       </Grid>
     </Grid>
   )
