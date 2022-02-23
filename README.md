@@ -4,7 +4,7 @@ This is still a work in progress with issues!
 
 ## TODO:
 - navbar
-- fix double add button
+- remove useless add business entity button
 - recreate entity list//modal pattern for compliance rules
 - data bug with checking is name/jurisidiction exists
 - app styling and responsiveness
