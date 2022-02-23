@@ -10,7 +10,6 @@ function App() {
 
   return (
     <Container>
-     
       <Grid>
         <EntityList owner={owner} />
       </Grid>
