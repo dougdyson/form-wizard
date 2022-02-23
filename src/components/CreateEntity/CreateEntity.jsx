@@ -58,11 +58,7 @@ function Entity(props) {
     );
   }
 
-  const handleClick = () => {
-
-    console.log(entity.name);
-
-    console.log('CE - handleclick - entity', entity);
+  const handleClick = (e) => {
 
     if (!isUniqueEntityName(entity.name))
     {
@@ -87,8 +83,8 @@ function Entity(props) {
       props.toggleModal();
       // open entity list component
     }
-    setDisabled(true)
-    
+    setDisabled(true);
+    e.preventDefault();
   }
   const {showModal, toggleModal} = props;
 
