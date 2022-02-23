@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
+import { PersonalInfo } from "../PersonalInfo/PersonalInfo.stories";
 import { Address } from "../Address/Address"
 import { PhoneNumbers } from "../PhoneNumbers/PhoneNumbers"
 
@@ -20,16 +21,13 @@ export default function UpdateContactInfo(props){
       alignItems="stretch"
     >
       <Grid>
-        <TextField item xs="auto" label="Registered Owner Name" fullsize required></TextField>
+        <PersonalInfo />
       </Grid>
       <Grid>
         <Address />
       </Grid>
       <Grid>
         <PhoneNumbers />
-      </Grid>
-      <Grid>
-        <TextField label="Email" fullsize required></TextField>
       </Grid>
     </Grid>
   )
