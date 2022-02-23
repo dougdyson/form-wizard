@@ -52,7 +52,7 @@ function Entity(props) {
           }
         });
         
-        setDisabled(true)
+        setDisabled(true);
         
       }
     );
@@ -60,16 +60,16 @@ function Entity(props) {
 
   const handleClick = (e) => {
 
-    if (!isUniqueEntityName(entity.name))
+    if (!isUniqueEntityName(entity.name));
     {
-      setHelperText('Name already in use')
-      setError(true)
+      setHelperText('Name already in use');
+      setError(true);
     }
 
     if (!isUniqueWallet(entity.address))
     {
-      setAddressHelperText('Address already in use')
-      setAddressError(true)
+      setAddressHelperText('Address already in use');
+      setAddressError(true);
     }
 
     if (error === null && addressError === null)
