@@ -12,11 +12,11 @@ function EntityList(props) {
   const [entityForm, setEntityForm] = useState(false);
   const [entities, setEntities] = useState([]);
 
+  
   const getEntities = () => {
     const entitiesData = getEntitiesForOwner(props.owner);
     setEntities(entitiesData);
   }
-    
   useEffect(() => {
     getEntities();
   }, []);
