@@ -40,27 +40,27 @@ const getEntitiesForOwner = (owner) => {
   return allEntities.filter(entity => entity.owner === owner);
 };
 
-const isUniqueEntityName = (entityName) => {
+// const isUniqueEntityName = (entityName) => {
 
-  const duplicate = allEntities.find(entity => entity.name === entityName)
+//   const duplicate = allEntities.find(entity => entity.name === entityName)
 
-  // if (duplicate.name.length) 
-  // {
-  //   return false
-  // }
-  return true
-};
+//   // if (duplicate.name.length) 
+//   // {
+//   //   return false
+//   // }
+//   return true
+// };
 
-const isUniqueWallet = (walletAddress) => {
-  const duplicate = allEntities.find(entity => entity.address === walletAddress)
+// const isUniqueWallet = (walletAddress) => {
+//   const duplicate = allEntities.find(entity => entity.address === walletAddress)
   
-  // if (duplicate) 
-  // {
-  //   return false
-  // }
+//   // if (duplicate) 
+//   // {
+//   //   return false
+//   // }
   
-  return true
-};
+//   return true
+// };
 
 const addNewEntity = (newEntity) => {
   
@@ -162,7 +162,7 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 }
 
 module.exports = { 
-  allEntities, addNewEntity, isUniqueEntityName, isUniqueWallet, getEntityDetailsByID, getEntitiesForOwner,
+  allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
   allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword, authenticate,
   allJurisdictions, getJurisdictionByID,
   allRules, getRulesByJurisdictionID, getRuleByID,
