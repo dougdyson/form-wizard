@@ -42,26 +42,22 @@ const getEntitiesForOwner = (owner) => {
 
 const isUniqueEntityName = (entityName) => {
 
-  console.log('DATA - iUEN - allEntities', allEntities);
-  console.log('DATA - iUEN - entityName', entityName);
   const duplicate = allEntities.find(entity => entity.name === entityName)
 
-  console.log('DATA - iUEN - duplicate', duplicate );
-  
-  if (duplicate.name.length) 
-  {
-    return false
-  }
+  // if (duplicate.name.length) 
+  // {
+  //   return false
+  // }
   return true
 };
 
 const isUniqueWallet = (walletAddress) => {
   const duplicate = allEntities.find(entity => entity.address === walletAddress)
   
-  if (duplicate) 
-  {
-    return false
-  }
+  // if (duplicate) 
+  // {
+  //   return false
+  // }
   
   return true
 };
