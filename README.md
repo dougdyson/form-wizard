@@ -1,3 +1,19 @@
+# WELCOME
+
+This is still a work in progress with issues!
+
+## TODO:
+- navbar
+- fix double add button
+- recreate entity list//modal pattern for compliance rules
+- data bug with checking is name/jurisidiction exists
+- app styling and responsiveness
+
+## Takeaways
+- got going with Yup, seems straightforward
+- using Material UI, looks nice - still learning
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
