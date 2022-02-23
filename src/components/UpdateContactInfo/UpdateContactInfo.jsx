@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 
 import { Address } from "../Address/Address"
+import { PhoneNumbers } from "../PhoneNumbers/PhoneNumbers"
 
 import { Grid, TextField, Button, Typography, Select, MenuItem, Modal, Box } from '@mui/material';
 import 'typeface-roboto'
+import PhoneNumbers from '../PhoneNumbers/PhoneNumbers';
 
 
 export default function UpdateContactInfo(props){
@@ -24,13 +26,7 @@ export default function UpdateContactInfo(props){
         <Address />
       </Grid>
       <Grid>
-        <TextField label="Telephone" fullsize required></TextField>
-      </Grid>
-      <Grid>
-        <TextField label="Fax" fullsize required></TextField>
-      </Grid>
-      <Grid>
-        <TextField label="Mobile" fullsize required></TextField>
+        <PhoneNumbers />
       </Grid>
       <Grid>
         <TextField label="Email" fullsize required></TextField>
