@@ -18,8 +18,6 @@ function Entity(props) {
   const [disabled, setDisabled] = useState(true)
   const [addressHelpText, setAddressHelperText] = useState(' ');
 
-
-
   const handleChange = e => {
     // reset any error messaging
     setError(null);
