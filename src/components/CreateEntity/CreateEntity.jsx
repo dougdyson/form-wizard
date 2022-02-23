@@ -60,17 +60,17 @@ function Entity(props) {
 
   const handleClick = (e) => {
 
-    if (!isUniqueEntityName(entity.name));
-    {
-      setHelperText('Name already in use');
-      setError(true);
-    }
+    // if (!isUniqueEntityName(entity.name))
+    // {
+    //   setHelperText('Name already in use');
+    //   setError(true);
+    // }
 
-    if (!isUniqueWallet(entity.address))
-    {
-      setAddressHelperText('Address already in use');
-      setAddressError(true);
-    }
+    // if (!isUniqueWallet(entity.address))
+    // {
+    //   setAddressHelperText('Address already in use');
+    //   setAddressError(true);
+    // }
 
     if (error === null && addressError === null)
     {
