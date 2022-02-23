@@ -9,7 +9,6 @@ export default function UpdateRegOwner(){
   return(
     <Grid 
       container
-      component={"form"} 
       noValidate 
       autoComplete='off'
       direction="column"
@@ -17,7 +16,7 @@ export default function UpdateRegOwner(){
       alignItems="stretch"
     >
       <Grid>
-        <TextField label="Registered Owner Name" fullsize required></TextField>
+        <TextField item xs="auto" label="Registered Owner Name" fullsize required></TextField>
       </Grid>
       <Grid>
         <TextField label="Address 1" fullsize required></TextField>
@@ -39,6 +38,9 @@ export default function UpdateRegOwner(){
       </Grid>
       <Grid>
         <TextField label="Telephone" fullsize required></TextField>
+      </Grid>
+      <Grid>
+        <TextField label="Fax" fullsize required></TextField>
       </Grid>
       <Grid>
         <TextField label="Mobile" fullsize required></TextField>
