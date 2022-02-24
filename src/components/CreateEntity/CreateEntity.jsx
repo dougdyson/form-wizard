@@ -34,6 +34,11 @@ function Entity(props) {
   }
 
   const handleBlur = async (e) => {
+
+    // don't validate if there is nothing to validate
+    if (e.target.value.length === 0) {
+      return
+    }
       
     entityValidation.validate(entity, {abortEarly: false})
       .then((entity) => {
