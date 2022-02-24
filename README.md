@@ -3,16 +3,8 @@
 This is still a work in progress with issues!
 
 ## TODO:
-- navbar
-- remove useless add business entity button
-- recreate entity list//modal pattern for compliance rules
-- data bug with checking is name/jurisidiction exists
-- app styling and responsiveness
-
-## Takeaways
-- got going with Yup, seems straightforward
-- using Material UI, looks nice - still learning
-
+- validate and update business compliance rules
+- polish styling and responsiveness
 
 # Getting Started with Create React App
 
