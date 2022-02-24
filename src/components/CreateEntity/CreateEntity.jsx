@@ -7,7 +7,6 @@ import { entityValidation, entitySubmitValidation } from './entityValidation';
 import { addNewEntity, allJurisdictions } from '../../data/data';
 // import { isUniqueEntityName, isUniqueWallet } from '../../data/data';
 
-
 function Entity(props) {
 
   // hardcoded userID while no user profile
@@ -117,8 +116,6 @@ function Entity(props) {
   }
 
   const handleFocus = (e) => {
-    console.log('e.target.name',e.target.name);
-    // reset any error messaging
     if (e.target.name === "name")
     {
       setError(null);
