@@ -40,28 +40,6 @@ const getEntitiesForOwner = (owner) => {
   return allEntities.filter(entity => entity.owner === owner);
 };
 
-// const isUniqueEntityName = (entityName) => {
-
-//   const duplicate = allEntities.find(entity => entity.name === entityName)
-
-//   // if (duplicate.name.length) 
-//   // {
-//   //   return false
-//   // }
-//   return true
-// };
-
-// const isUniqueWallet = (walletAddress) => {
-//   const duplicate = allEntities.find(entity => entity.address === walletAddress)
-  
-//   // if (duplicate) 
-//   // {
-//   //   return false
-//   // }
-  
-//   return true
-// };
-
 const addNewEntity = (newEntity) => {
   
   // TODO: check jurisdiction_id exists?
@@ -87,44 +65,6 @@ const addNewEntity = (newEntity) => {
   // return newEntity object with updated id
   return newEntity;
 };
-
-// ===========================================
-// ===               OWNERS                ===
-// ===========================================
-const allOwners = require('./owners.json');
-
-const getOwnerDetailsByID = (address) => {
-  return allOwners.find(owner => owner.address === address)
-};
-
-const addOwner = (owner) => {
-  // set data values and push to database
-  owner.timestamp = Date.now();
-  owner.active    = true;
-  allOwners.push(owner);
-  // return owner object with updated id and properties
-  return owner;
-}
-
-const ownerEmailExists = (email) => {
-  return (allOwners.find(owner => owner.email === email)) ? true : false;
-}
-
-const validOwnerPassword = (password) => {
-  return (allOwners.find(owner => owner.password === password)) ? true : false;
-}
-
-const authenticate = (credentials) => {
-  if (!ownerEmailExists(credentials.email))
-  {
-    return false;
-  }
-  if (!validOwnerPassword(credentials.password))
-  {
-    return false;
-  }
-  return true;
-}
 
 // ===========================================
 // ===             COMPLIANCE              ===
@@ -163,7 +103,6 @@ const updateCompliance = (complianceID, ruleUpdate, updateValue) => {
 
 module.exports = { 
   allEntities, addNewEntity, getEntityDetailsByID, getEntitiesForOwner,
-  allOwners, addOwner, getOwnerDetailsByID, ownerEmailExists, validOwnerPassword, authenticate,
   allJurisdictions, getJurisdictionByID,
   allRules, getRulesByJurisdictionID, getRuleByID,
   allCompliance, addCompliance, getComplianceByEntityID, updateCompliance 

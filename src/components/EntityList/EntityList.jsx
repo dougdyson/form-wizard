@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { getEntitiesForOwner } from '../../data/data';
 import EntityCard from '../EntityCard/EntityCard';
+
 import CreateEntity from '../CreateEntity/CreateEntity';
 
 function EntityList(props) {
