@@ -1,5 +1,10 @@
 // REVIEW NOTES
-// - no error management on jurisdiction list item
+// - KNOWN ISSUE: no error management on jurisdiction list item, can submit blank and break app
+// - wallet address is 5 characters for demo purposes, should connect to wallet
+// - handleClick should probably be handleSubmit
+// - TODO: check for unique name, check for unique wallet (data functions written)
+// - TODO: helpText/setHelperText et al to setHelperText/setNameHelperText
+// - TODO: entities to company throughout project, too confusing language
 
 
 import React from 'react';
@@ -11,7 +16,7 @@ import { entityValidation, entitySubmitValidation } from './entityValidation';
 import { addNewEntity, allJurisdictions } from '../../data/data';
 // import { isUniqueEntityName, isUniqueWallet } from '../../data/data';
 
-function Entity(props) {
+export default function Entity(props) {
 
   // hardcoded userID while no user profile
   const owner = '04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1';
@@ -242,5 +247,3 @@ function Entity(props) {
     </Grid>
   )
 }
-
-export default Entity;
