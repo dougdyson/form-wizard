@@ -1,3 +1,7 @@
+// REVIEW NOTES
+// - no error management on jurisdiction list item
+
+
 import React from 'react';
 import { useState } from 'react';
 import { Grid, TextField, Button, Typography, Select, MenuItem, Modal, Box } from '@mui/material';
@@ -66,7 +70,7 @@ function Entity(props) {
   const handleChange = (e) => {
     setEntity({...entity, [e.target.name]: e.target.value});
     // check for errors
-    if (!error && !addressError){
+    if (!error && ! addressError){
       setDisabled(false)
     }
   }
