@@ -9,7 +9,9 @@ import { getComplianceByEntityID } from '../../data/data'
 function ComplianceList(props) {
   
   const [complianceForm, setComplianceForm] = useState(false);
-  const [rules, setRules] = useState([]);
+  const [rules, setRules] = useState(null);
+  const [error, setError] = useState(null);
+  const [disabled, setDisabled] = useState(true)
 
   const getRules = () => {
     const complianceRules = getComplianceByEntityID(props.id)
@@ -26,7 +28,7 @@ function ComplianceList(props) {
   return (
     <Grid>
       <Grid>
-        
+        {rules.map(rule => console.log(rules))}
       </Grid>
     </Grid>
   )

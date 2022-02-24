@@ -3,7 +3,10 @@ import { useState } from 'react';
 import { Grid, TextField, Button, Typography, Select, MenuItem, Modal, Box } from '@mui/material';
 import 'typeface-roboto'
 
+// Yup validation
 import { entityValidation } from './entityValidation';
+
+// data calls
 import { addNewEntity, allJurisdictions } from '../../data/data';
 // import { isUniqueEntityName, isUniqueWallet } from '../../data/data';
 
@@ -20,8 +23,6 @@ function Entity(props) {
   const [helperText, setHelperText] = useState(' ');
   const [disabled, setDisabled] = useState(true)
   const [addressHelpText, setAddressHelperText] = useState(' ');
-
-
 
   const handleChange = e => {
     // reset any error messaging
