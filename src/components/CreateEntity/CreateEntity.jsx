@@ -10,6 +10,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { Grid, TextField, Button, Typography, Select, MenuItem, Modal, Box } from '@mui/material';
+
+import './create-entity.css'
 import 'typeface-roboto'
 
 import { entityValidation, entitySubmitValidation } from './entityValidation';
@@ -186,7 +188,7 @@ export default function Entity(props) {
               Create
             </Typography>
           </Grid>
-          <Grid>
+          <Grid sx={{mb: 2}}>
             <TextField fullWidth
               name="name" 
               label="Company Name"
@@ -200,7 +202,7 @@ export default function Entity(props) {
               onFocus={handleFocus}
             />
           </Grid>
-          <Grid>
+          <Grid sx={{mb: 2}}>
             <TextField fullWidth
               error={addressError}
               name="address" 
@@ -214,7 +216,7 @@ export default function Entity(props) {
               onFocus={handleFocus}
             />
           </Grid>
-          <Grid>
+          <Grid sx={{mb: 4}}>
             <Select fullWidth
               name="jurisdictionID" 
               label="Jurisdiction"
@@ -226,10 +228,11 @@ export default function Entity(props) {
               <MenuItem value={""}>Select One</MenuItem>
               {allJurisdictions.map(j => <MenuItem key={j.id} value={j.id}>{j.name}</MenuItem>)}
             </Select>
-          </Grid>      
-          <Grid>
+          </Grid>
+          <Grid container justifyContent="flex-end" >
             <Button 
               variant="text"
+              sx={{pr: 2}}
               onClick={handleCancel} 
             >
               Cancel
