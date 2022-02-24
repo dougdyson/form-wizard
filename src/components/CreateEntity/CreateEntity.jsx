@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Grid, TextField, Button, Typography, Select, MenuItem, Modal, Box } from '@mui/material';
 import 'typeface-roboto'
 
-import { entityValidation } from './entityValidation';
+import { entityValidation, entitySubmitValidation } from './entityValidation';
 import { addNewEntity, allJurisdictions } from '../../data/data';
 // import { isUniqueEntityName, isUniqueWallet } from '../../data/data';
 
@@ -71,6 +71,32 @@ function Entity(props) {
   
   const handleClick = (e) => {
 
+    // validate fields
+    entitySubmitValidation.validate(entity, {abortEarly: false})
+      .then((entity) => {
+          setEntity(entity)
+      })
+      .catch((errors) => {
+        
+        errors.inner.forEach(item => {
+          if( item.path === "name" ) 
+          {         
+            setError(true);
+            setHelperText(item.errors);
+          }
+
+          if( item.path === "address" )
+          {
+            setAddressError(true);
+            setAddressHelperText(item.errors);
+          }
+        });
+        
+        setDisabled(true);
+        
+      }
+    );
+
     // check for unique name
     // check for unique wallet
     
@@ -78,6 +104,7 @@ function Entity(props) {
     {
       // get owner from props or context
       // entity.owner = props.owner
+      
       entity.owner = owner;
       const newData = addNewEntity(entity);
       props.setEntities(prevState => [newData, ...prevState]);
@@ -95,14 +122,20 @@ function Entity(props) {
     if (e.target.name === "name")
     {
       setError(null);
-      setHelperText('Name must be 3-40 characters')
-      setAddressHelperText(' ')
+      setHelperText('Company Name is 3-40 characters')
+      
+      if (!addressError) 
+      {
+        setAddressHelperText(' ')
+      }
     }
     if (e.target.name === "address")
     {
       setAddressError(null)
-      setAddressHelperText('Address must be 5 characters')
-      setHelperText(' ')
+      setAddressHelperText('Wallet Address is 5 characters')
+      if (!error) {
+        setHelperText(' ')
+      }
     }
   }
   
