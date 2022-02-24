@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 
 import ComplianceCard from '../ComplianceCard/ComplianceCard';
+import ComplianceForm from '../ComplianceForm/ComplianceForm';
 import { getComplianceByEntityID } from '../../data/data';
 
 import { Grid, IconButton, AddCircleIcon } from "@mui/material";
@@ -11,13 +12,14 @@ import { Grid, IconButton, AddCircleIcon } from "@mui/material";
 export default function ComplianceList(props) {
 
   const { id } = useParams();
-  const complianceID = +id;
   
   const [complianceForm, setComplianceForm] = useState(false);
+  const [activeItem, setActiveItem] = useState(null);
   const [rules, setRules] = useState([]);
 
   const getRules = () => {
-    const complianceRules = getComplianceByEntityID(complianceID)
+    const complianceRules = getComplianceByEntityID(id)
+    console.log('complianceRules', complianceRules, 'id==>>', id);
     setRules(complianceRules);
   }
 
@@ -27,10 +29,17 @@ export default function ComplianceList(props) {
 
   const toggleRuleForm = () => setComplianceForm(prevState => !prevState);
 
+  const handleSetActiveItem = (item) => {
+    setActiveItem(item);
+    toggleRuleForm();
+  }
+
   return (
     <Grid>
       <Grid>
-        {rules.map(rule => <ComplianceCard key={rule.id} id={rule.id}/>)}
+        {complianceForm && <ComplianceForm showModal={complianceForm} toggleModal={toggleRuleForm} />}
+        Compliance List!
+        {rules.map(rule => <ComplianceCard toggleRuleForm={toggleRuleForm} key={rule.id} id={rule.id} setActiveItem={handleSetActiveItem} />)}
       </Grid>
     </Grid>
   )

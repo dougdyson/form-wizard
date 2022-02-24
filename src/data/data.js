@@ -73,7 +73,9 @@ const addNewEntity = (newEntity) => {
 const allCompliance = require('./compliance.json');
 
 const getComplianceByEntityID = (entityID) => {
-  return allCompliance.filter(compliance => compliance.entityID === entityID);
+  console.log('entityID', entityID);
+  console.log('allCompliance', allCompliance);
+  return allCompliance.filter(compliance => parseInt(compliance.entityID) === parseInt(entityID));
 }
 
 const addCompliance = (compliance) => {

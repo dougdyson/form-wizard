@@ -18,13 +18,13 @@ export default function(props) {
       alignItems="stretch"
     >
       <Grid>
-        <TextField item xs="auto" label="Amount Invested In-Country" fullsize required></TextField>
+        <TextField xs="auto" label="Amount Invested In-Country"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="Date Assessed" fullsize required></TextField>
+        <TextField label="Date Assessed"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="Industry Dropdown" fullsize required></TextField>
+        <TextField label="Industry Dropdown"  required></TextField>
       </Grid>
     </Grid>
   )

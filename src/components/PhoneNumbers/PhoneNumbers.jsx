@@ -7,13 +7,13 @@ export default function PhoneNumbers(props) {
   return(
     <Grid>
       <Grid>
-        <TextField label="Telephone" fullsize required></TextField>
+        <TextField label="Telephone"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="Fax" fullsize required></TextField>
+        <TextField label="Fax"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="Mobile" fullsize required></TextField>
+        <TextField label="Mobile"  required></TextField>
       </Grid>
     </Grid>
   )

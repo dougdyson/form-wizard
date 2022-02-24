@@ -7,22 +7,22 @@ export default function Address(props) {
   return (
     <Grid>
       <Grid>
-        <TextField label="Address 1" fullsize required></TextField>
+        <TextField label="Address 1"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="Address 2" fullsize required></TextField>
+        <TextField label="Address 2"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="City" fullsize required></TextField>
+        <TextField label="City"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="State" fullsize required></TextField>
+        <TextField label="State"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="Country" fullsize required></TextField>
+        <TextField label="Country"  required></TextField>
       </Grid>
       <Grid>
-        <TextField label="Zip Postal Code" fullsize required></TextField>
+        <TextField label="Zip Postal Code"  required></TextField>
       </Grid>
     </Grid>
   )

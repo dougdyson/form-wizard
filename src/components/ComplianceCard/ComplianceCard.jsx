@@ -7,14 +7,15 @@ import { getRuleByID } from "../../data/data"
 
 export default function ComplianceCard(props) {
 
-  const ruleName = getRuleByID(props.id);
+  const rule = getRuleByID(props.id);
+  console.log('props==>>', props, 'ruleName==>>', rule);
 
   return(
-    <Grid>
+    <Grid onClick={() => props.setActiveItem(rule)}>
       <Card>
         <CardContent>
           <CheckCircleOutlineIcon />
-          <Typography>{ruleName}</Typography>
+          <Typography>{rule.name}</Typography>
           <Typography>Please update message for incomplete compliance</Typography>
         </CardContent>
       </Card>
