@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import Avatar from '@mui/material/Avatar';
+import { lightBlue } from '@mui/material/colors';
 
 export default function ButtonAppBar() {
   return (
@@ -24,7 +26,7 @@ export default function ButtonAppBar() {
           <Typography variant="overline" component="div" sx={{ flexGrow: 1 }}>
             BlockDocs
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Avatar sx={{ width: 32, height: 32, bgcolor: lightBlue[500] }} />
         </Toolbar>
       </AppBar>
     </Box>
