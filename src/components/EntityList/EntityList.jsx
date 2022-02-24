@@ -27,15 +27,15 @@ function EntityList(props) {
 
   const toggleEntityForm = () => setEntityForm(prevState => !prevState);
 
-  const style = {
-    variant: "overline",
+  const cardStyle = {
     ml: 3,
     mt: 2,
+    mb: 2,
   }
 
   return (
     <Grid>
-      <Typography sx={style}>
+      <Typography sx={cardStyle}>
         Your Companies
       </Typography>
       <Grid>

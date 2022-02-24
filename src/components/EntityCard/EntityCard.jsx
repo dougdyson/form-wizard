@@ -23,7 +23,7 @@ function EntityCard(props) {
           <Grid>
             <Typography sx={{ml: 1, mr: 1}}>{entity.name}, LLC</Typography>
             <Typography variant="overline" sx={{ml: 1, mr: 1}}>{jurisdiction.name}</Typography>
-            <Typography sx={{fontSize: 14, ml: 1, mr: 1}} noWrap>{entity.address}</Typography>
+            <Typography sx={{fontSize: 14, ml: 1, mr: 1, color: "darkgrey"}} noWrap>{entity.address}</Typography>
           </Grid>
         </CardContent>
       </Card>
