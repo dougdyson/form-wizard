@@ -31,6 +31,7 @@ function EntityList(props) {
     ml: 3,
     mt: 2,
     mb: 2,
+    color: "darkgrey",
   }
 
   return (
