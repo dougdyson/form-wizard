@@ -184,8 +184,11 @@ export default function Entity(props) {
       <Modal open={showModal} onClose={toggleModal}>
         <Box sx={style}>
           <Grid>
-            <Typography variant="overline">
-              Create
+            <Typography
+              variant="h5"
+              sx={{ml:1, pb:4}}
+            >
+              Create Company
             </Typography>
           </Grid>
           <Grid sx={{mb: 2}}>
@@ -229,7 +232,10 @@ export default function Entity(props) {
               {allJurisdictions.map(j => <MenuItem key={j.id} value={j.id}>{j.name}</MenuItem>)}
             </Select>
           </Grid>
-          <Grid container justifyContent="flex-end" >
+          <Grid 
+            container 
+            justifyContent="flex-end" 
+          >
             <Button 
               variant="text"
               sx={{pr: 2}}
@@ -239,8 +245,8 @@ export default function Entity(props) {
             </Button>
             <Button 
               variant="contained" 
-              onClick={handleClick}
               disabled={disabled}
+              onClick={handleClick}
             >
             Submit
             </Button>
