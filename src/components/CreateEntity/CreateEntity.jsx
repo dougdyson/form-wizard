@@ -24,7 +24,7 @@ function Entity(props) {
   const [disabled, setDisabled] = useState(true)
   const [addressHelperText, setAddressHelperText] = useState(' ');
 
-  const handleBlur = async (e) => {
+  const handleBlur = (e) => {
 
     // nothing to validate
     if (e.target.value.length === 0) {
