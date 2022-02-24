@@ -1,10 +1,10 @@
 // REVIEW NOTES
-// - KNOWN ISSUE: no error management on jurisdiction list item, can submit blank and break app
+// - KNOWN ISSUES: no error management on jurisdiction list item, can submit blank and break app etc
 // - wallet address is 5 characters for demo purposes, should connect to wallet
-// - handleClick should probably be handleSubmit
+// - handleClick on Submit button should probably be named handleSubmit
 // - TODO: check for unique name, check for unique wallet (data functions written)
-// - TODO: helpText/setHelperText et al to setHelperText/setNameHelperText
-// - TODO: entities to company throughout project, too confusing language
+// - TODO: rename helpText/setHelperText et al to setHelperText/setNameHelperText
+// - TODO: rename entities to company throughout project, too confusing language
 
 
 import React from 'react';
