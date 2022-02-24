@@ -10,8 +10,6 @@ function ComplianceList(props) {
   
   const [complianceForm, setComplianceForm] = useState(false);
   const [rules, setRules] = useState(null);
-  const [error, setError] = useState(null);
-  const [disabled, setDisabled] = useState(true)
 
   const getRules = () => {
     const complianceRules = getComplianceByEntityID(props.id)
