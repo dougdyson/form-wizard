@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material/';
+import AppBar from '../AppBar/AppBar';
 
 // import AppBar from '@mui/material/AppBar';
 import EntityList from '../EntityList/EntityList';
@@ -10,6 +11,9 @@ function App() {
 
   return (
     <Container>
+      <Grid>
+        <AppBar />
+      </Grid>
       <Grid>
         <EntityList owner={owner} />
       </Grid>
