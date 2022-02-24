@@ -11,7 +11,8 @@ function EntityCard(props) {
   const style = {
     bgcolor: 'background.paper',
     border: '1px solid #a9a9a9',
-    mt: 2
+    mt: 1,
+    mb: 2,
   }
 
   return (
@@ -19,9 +20,11 @@ function EntityCard(props) {
     <Grid>
       <Card sx={style}>
         <CardContent>
-          <Typography>{entity.name}, LLC</Typography>
-          <Typography variant="overline">{jurisdiction.name}</Typography>
-          <Typography sx={{fontSize: 14}} noWrap>{entity.address}</Typography>
+          <Grid>
+            <Typography sx={{ml: 1, mr: 1}}>{entity.name}, LLC</Typography>
+            <Typography variant="overline" sx={{ml: 1, mr: 1}}>{jurisdiction.name}</Typography>
+            <Typography sx={{fontSize: 14, ml: 1, mr: 1}} noWrap>{entity.address}</Typography>
+          </Grid>
         </CardContent>
       </Card>
     </Grid>

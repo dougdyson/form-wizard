@@ -1,6 +1,9 @@
+// CODE REVIEW NOTES
+
+
 import React from "react";
 import { useState, useEffect } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { getEntitiesForOwner } from '../../data/data';
@@ -24,15 +27,27 @@ function EntityList(props) {
 
   const toggleEntityForm = () => setEntityForm(prevState => !prevState);
 
+  const style = {
+    variant: "overline",
+    ml: 3,
+    mt: 2,
+  }
+
   return (
     <Grid>
+      <Typography sx={style}>
+        Your Companies
+      </Typography>
       <Grid>
         {entities.map(entity => <EntityCard key={entity.id} id={entity.id}/>)}
       </Grid>
       {entityForm && <CreateEntity showModal={entityForm} toggleModal={toggleEntityForm} setEntities={setEntities} />}
-      <Grid>
+      <Grid 
+        container 
+        justifyContent="flex-end"
+      >
         <IconButton onClick={toggleEntityForm}>
-          <AddCircleIcon size="large" color="primary" />
+          <AddCircleIcon fontSize="large" mt={2} color="primary" />
         </IconButton>
       </Grid>
     </Grid>
