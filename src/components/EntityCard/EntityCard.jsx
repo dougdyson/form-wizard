@@ -1,5 +1,6 @@
 import React from "react"
 import { Grid, Card, CardContent, Typography } from "@mui/material"
+import { CardActionArea } from '@mui/material';
 
 import { getEntityDetailsByID, getJurisdictionByID } from "../../data/data"
 
@@ -19,13 +20,15 @@ function EntityCard(props) {
 
     <Grid>
       <Card sx={style}>
-        <CardContent>
-          <Grid>
-            <Typography sx={{ml: 1, mr: 1}}>{entity.name}, LLC</Typography>
-            <Typography variant="overline" sx={{ml: 1, mr: 1}}>{jurisdiction.name}</Typography>
-            <Typography sx={{fontSize: 14, ml: 1, mr: 1, color: "darkgrey"}} noWrap>{entity.address}</Typography>
-          </Grid>
-        </CardContent>
+        <CardActionArea>
+          <CardContent>
+            <Grid>
+              <Typography sx={{ml: 1, mr: 1}}>{entity.name}, LLC</Typography>
+              <Typography variant="overline" sx={{ml: 1, mr: 1}}>{jurisdiction.name}</Typography>
+              <Typography sx={{fontSize: 14, ml: 1, mr: 1, color: "darkgrey"}} noWrap>{entity.address}</Typography>
+            </Grid>
+          </CardContent>
+        </CardActionArea>
       </Card>
     </Grid>
 
