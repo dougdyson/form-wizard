@@ -132,6 +132,7 @@ function Entity(props) {
               label="Company Name"
               value={entity.name}
               required
+              autoComplete='off'
               error={error}
               helperText={helperText}
               onChange={handleChange}
@@ -145,6 +146,7 @@ function Entity(props) {
               label="Wallet Address"
               value={entity.address}
               required
+              autoComplete='off'
               helperText={addressHelpText}
               onChange={handleChange}
               onBlur={handleBlur}
