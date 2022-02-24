@@ -10,7 +10,7 @@ import { addNewEntity, allJurisdictions } from '../../data/data';
 
 function Entity(props) {
 
-  // hardcoded userID for now
+  // hardcoded userID while no user profile
   const owner = '04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1';
 
   const initialState = {name: "", address: "", jurisdictionID: ""}
@@ -26,6 +26,16 @@ function Entity(props) {
     // nothing to validate
     if (e.target.value.length === 0) {
       return
+    }
+
+    if (e.target.name === "name")
+    {
+      setAddressHelperText(' ');
+    }
+
+    if (e.target.name === "address")
+    {
+      setHelperText(' ');
     }
       
     entityValidation.validate(entity, {abortEarly: false})
@@ -55,29 +65,15 @@ function Entity(props) {
   }
 
   const handleChange = (e) => {
-    // reset any error messaging
-    setError(null);
-    setAddressError(null)
-    setHelperText(' ')
-    setAddressHelperText(' ')
     setEntity({...entity, [e.target.name]: e.target.value});
     setDisabled(null)
   }
-
+  
   const handleClick = (e) => {
 
-    // if (!isUniqueEntityName(entity.name))
-    // {
-    //   setHelperText('Name already in use');
-    //   setError(true);
-    // }
-
-    // if (!isUniqueWallet(entity.address))
-    // {
-    //   setAddressHelperText('Address already in use');
-    //   setAddressError(true);
-    // }
-
+    // check for unique name
+    // check for unique wallet
+    
     if (error === null && addressError === null)
     {
       // get owner from props or context
@@ -95,12 +91,25 @@ function Entity(props) {
 
   const handleFocus = (e) => {
     console.log('e.target.name',e.target.name);
+    // reset any error messaging
+    if (e.target.name === "name")
+    {
+      setError(null);
+      setHelperText('Name must be 3-40 characters')
+      setAddressHelperText(' ')
+    }
+    if (e.target.name === "address")
+    {
+      setAddressError(null)
+      setAddressHelperText('Address must be 5 characters')
+      setHelperText(' ')
+    }
   }
   
   // toggle for modal used for creating new entity
   const {showModal, toggleModal} = props;
 
-  // used to customize component styling
+  // used to customize modal styling
   const style = {
     position: 'absolute',
     top: '50%',
