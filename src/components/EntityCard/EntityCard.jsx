@@ -8,14 +8,20 @@ function EntityCard(props) {
   const entity = getEntityDetailsByID(props.id)
   const jurisdiction = getJurisdictionByID(entity.jurisdictionID)
 
+  const style = {
+    bgcolor: 'background.paper',
+    border: '1px solid #a9a9a9',
+    mt: 2
+  }
+
   return (
 
     <Grid>
-      <Card>
+      <Card sx={style}>
         <CardContent>
           <Typography>{entity.name}, LLC</Typography>
-          <Typography>{jurisdiction.name}</Typography>
-          <Typography noWrap>{entity.address}</Typography>
+          <Typography variant="overline">{jurisdiction.name}</Typography>
+          <Typography sx={{fontSize: 14}} noWrap>{entity.address}</Typography>
         </CardContent>
       </Card>
     </Grid>
