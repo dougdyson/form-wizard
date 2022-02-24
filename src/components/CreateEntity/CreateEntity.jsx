@@ -19,15 +19,17 @@ function Entity(props) {
   const [addressError, setAddressError] = useState(null)
   const [helperText, setHelperText] = useState(' ');
   const [disabled, setDisabled] = useState(true)
-  const [addressHelpText, setAddressHelperText] = useState(' ');
-  
+  const [addressHelperText, setAddressHelperText] = useState(' ');
+
+
+
   const handleBlur = async (e) => {
-    
+
     // don't validate if there is nothing to validate
     if (e.target.value.length === 0) {
       return
     }
-    
+      
     entityValidation.validate(entity, {abortEarly: false})
       .then((entity) => {
           setEntity(entity)
@@ -51,28 +53,28 @@ function Entity(props) {
         setDisabled(true);
         
       }
-      );
-    }
-    
-    const handleChange = e => {
-      // reset any error messaging
-      setError(null);
-      setAddressError(null)
-      setHelperText(' ')
-      setAddressHelperText(' ')
-      setEntity({...entity, [e.target.name]: e.target.value});
-      setDisabled(null)
-    }
+    );
+  }
 
-    const handleClick = (e) => {
-      
-      // if (!isUniqueEntityName(entity.name))
-      // {
-        //   setHelperText('Name already in use');
-        //   setError(true);
-        // }
-        
-        // if (!isUniqueWallet(entity.address))
+  const handleChange = (e) => {
+    // reset any error messaging
+    setError(null);
+    setAddressError(null)
+    setHelperText(' ')
+    setAddressHelperText(' ')
+    setEntity({...entity, [e.target.name]: e.target.value});
+    setDisabled(null)
+  }
+
+  const handleClick = (e) => {
+
+    // if (!isUniqueEntityName(entity.name))
+    // {
+    //   setHelperText('Name already in use');
+    //   setError(true);
+    // }
+
+    // if (!isUniqueWallet(entity.address))
     // {
     //   setAddressHelperText('Address already in use');
     //   setAddressError(true);
@@ -92,8 +94,15 @@ function Entity(props) {
     setDisabled(true);
     e.preventDefault();
   }
+
+  const handleFocus = (e) => {
+    console.log('e.target.name',e.target.name);
+  }
+  
+  // toggle for modal used for creating new entity
   const {showModal, toggleModal} = props;
 
+  // used to customize component styling
   const style = {
     position: 'absolute',
     top: '50%',
@@ -135,6 +144,7 @@ function Entity(props) {
               helperText={helperText}
               onChange={handleChange}
               onBlur={handleBlur}
+              onFocus={handleFocus}
             />
           </Grid>
           <Grid>
@@ -145,9 +155,10 @@ function Entity(props) {
               value={entity.address}
               required
               autoComplete='off'
-              helperText={addressHelpText}
+              helperText={addressHelperText}
               onChange={handleChange}
               onBlur={handleBlur}
+              onFocus={handleFocus}
             />
           </Grid>
           <Grid>
