@@ -11,7 +11,6 @@ import React from 'react';
 import { useState } from 'react';
 import { Grid, TextField, Button, Typography, Select, MenuItem, Modal, Box } from '@mui/material';
 
-import './create-entity.css'
 import 'typeface-roboto'
 
 import { entityValidation, entitySubmitValidation } from './entityValidation';
