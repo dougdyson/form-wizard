@@ -6,7 +6,7 @@ import ComplianceCard from '../ComplianceCard/ComplianceCard';
 import ComplianceForm from '../ComplianceForm/ComplianceForm';
 import { getComplianceByEntityID } from '../../data/data';
 
-import { Grid, IconButton, AddCircleIcon } from "@mui/material";
+import { Grid, Typography, IconButton, AddCircleIcon } from "@mui/material";
 
 
 export default function ComplianceList(props) {
@@ -19,7 +19,6 @@ export default function ComplianceList(props) {
 
   const getRules = () => {
     const complianceRules = getComplianceByEntityID(id)
-    console.log('complianceRules', complianceRules, 'id==>>', id);
     setRules(complianceRules);
   }
 
@@ -34,11 +33,18 @@ export default function ComplianceList(props) {
     toggleRuleForm();
   }
 
+  const cardStyle = {
+    ml: 3,
+    mt: 2,
+    mb: 2,
+    color: "darkgrey",
+  }
+
   return (
     <Grid>
       <Grid>
         {complianceForm && <ComplianceForm showModal={complianceForm} toggleModal={toggleRuleForm} />}
-        Compliance List!
+        <Typography sx={cardStyle}>Compliance Checklist</Typography>
         {rules.map(rule => <ComplianceCard toggleRuleForm={toggleRuleForm} key={rule.id} id={rule.id} setActiveItem={handleSetActiveItem} />)}
       </Grid>
     </Grid>

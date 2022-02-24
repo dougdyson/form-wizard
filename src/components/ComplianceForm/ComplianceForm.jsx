@@ -10,7 +10,7 @@ import PersonalInfo from '../PersonalInfo/PersonalInfo';
 import Address from '../Address/Address';
 import PhoneNumbers from '../PhoneNumbers/PhoneNumbers';
 
-const steps = ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+const steps = ['Info', 'Address', 'Contact'];
 
 export default function HorizontalNonLinearStepper(props) {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -49,8 +49,6 @@ export default function HorizontalNonLinearStepper(props) {
   const handleStep = (step) => () => {
     setActiveStep(step);
   };
-
-  console.log('actt==>>', activeStep)
 
   const handleComplete = () => {
     const newCompleted = completed;

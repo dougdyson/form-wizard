@@ -37,7 +37,6 @@ const getEntityDetailsByID = (entityID) => {
 };
 
 const getEntitiesForOwner = (owner) => {
-  console.log('owner', owner);
   return allEntities.filter(entity => entity.owner === owner);
 };
 
@@ -73,8 +72,6 @@ const addNewEntity = (newEntity) => {
 const allCompliance = require('./compliance.json');
 
 const getComplianceByEntityID = (entityID) => {
-  console.log('entityID', entityID);
-  console.log('allCompliance', allCompliance);
   return allCompliance.filter(compliance => parseInt(compliance.entityID) === parseInt(entityID));
 }
 
