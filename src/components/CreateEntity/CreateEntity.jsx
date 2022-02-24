@@ -65,7 +65,10 @@ function Entity(props) {
 
   const handleChange = (e) => {
     setEntity({...entity, [e.target.name]: e.target.value});
-    setDisabled(null)
+    // check for errors
+    if (!error && !addressError){
+      setDisabled(false)
+    }
   }
   
   const handleClick = (e) => {
