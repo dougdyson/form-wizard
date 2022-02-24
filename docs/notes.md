@@ -1,11 +1,9 @@
 # Welcome to FormWizard!
-This project demonstrates basic form handling in React using Formik and Yup for form validation.
+This project demonstrates basic form handling in React using Yup for form validation.
 
 The current focus of this project is frontend and so will stub out backend services.
 
 ## Scope
-- create account
-- login
 - create business entity
 - update business rule compliance
 
