@@ -6,6 +6,7 @@ const entityValidation = yup.object().shape({
                     .max(40, 'Must be less than 40 characters'),
   address: yup.string().length(5, 'Address must be 5 characters')
                        .matches(/^[aA-zZ0-9\s]+$/, 'No special characters allowed'),
+  jurisdiction: yup.string().matches(/^[0-9]+$/),
 });
 
 const entitySubmitValidation = yup.object().shape({
@@ -14,6 +15,8 @@ const entitySubmitValidation = yup.object().shape({
                     .max(40, 'Must be less than 40 characters'),
   address: yup.string().required('Company wallet address is required')
                        .matches(/^[aA-zZ0-9\s]+$/, 'No special characters allowed'),
+  jurisdiction: yup.string().required('Please select a jurisdiction')
+                            .matches(/^[0-9]+$/)
 });
 
 export { entityValidation, entitySubmitValidation } 
