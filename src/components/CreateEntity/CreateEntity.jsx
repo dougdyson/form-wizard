@@ -67,6 +67,10 @@ function Entity(props) {
     );
   }
 
+  const handleCancel = () => {
+    props.toggleModal();
+  }
+
   const handleChange = (e) => {
     setEntity({...entity, [e.target.name]: e.target.value});
     // check for errors
@@ -219,6 +223,12 @@ function Entity(props) {
             </Select>
           </Grid>      
           <Grid>
+            <Button 
+              variant="text"
+              onClick={handleCancel} 
+            >
+              Cancel
+            </Button>
             <Button 
               variant="contained" 
               onClick={handleClick}
