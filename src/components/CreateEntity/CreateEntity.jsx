@@ -20,26 +20,14 @@ function Entity(props) {
   const [helperText, setHelperText] = useState(' ');
   const [disabled, setDisabled] = useState(true)
   const [addressHelpText, setAddressHelperText] = useState(' ');
-
-
-
-  const handleChange = e => {
-    // reset any error messaging
-    setError(null);
-    setAddressError(null)
-    setHelperText(' ')
-    setAddressHelperText(' ')
-    setEntity({...entity, [e.target.name]: e.target.value});
-    setDisabled(null)
-  }
-
+  
   const handleBlur = async (e) => {
-
+    
     // don't validate if there is nothing to validate
     if (e.target.value.length === 0) {
       return
     }
-      
+    
     entityValidation.validate(entity, {abortEarly: false})
       .then((entity) => {
           setEntity(entity)
@@ -63,18 +51,28 @@ function Entity(props) {
         setDisabled(true);
         
       }
-    );
-  }
+      );
+    }
+    
+    const handleChange = e => {
+      // reset any error messaging
+      setError(null);
+      setAddressError(null)
+      setHelperText(' ')
+      setAddressHelperText(' ')
+      setEntity({...entity, [e.target.name]: e.target.value});
+      setDisabled(null)
+    }
 
-  const handleClick = (e) => {
-
-    // if (!isUniqueEntityName(entity.name))
-    // {
-    //   setHelperText('Name already in use');
-    //   setError(true);
-    // }
-
-    // if (!isUniqueWallet(entity.address))
+    const handleClick = (e) => {
+      
+      // if (!isUniqueEntityName(entity.name))
+      // {
+        //   setHelperText('Name already in use');
+        //   setError(true);
+        // }
+        
+        // if (!isUniqueWallet(entity.address))
     // {
     //   setAddressHelperText('Address already in use');
     //   setAddressError(true);
