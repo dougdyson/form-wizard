@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-import { Grid } from "@mui/material";
-import IconButton from '@mui/material/IconButton';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import ComplianceCard from '../ComplianceCard/ComplianceCard';
+import { getComplianceByEntityID } from '../../data/data';
 
-import { getComplianceByEntityID } from '../../data/data'
+import { Grid, IconButton, AddCircleIcon } from "@mui/material";
+
 
 export default function ComplianceList(props) {
 
@@ -30,7 +30,7 @@ export default function ComplianceList(props) {
   return (
     <Grid>
       <Grid>
-        
+        {rules.map(rule => <ComplianceCard key={rule.id} id={rule.id}/>)}
       </Grid>
     </Grid>
   )
