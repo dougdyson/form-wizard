@@ -1,25 +1,29 @@
 import React from 'react';
-
-import { Container, Grid } from '@mui/material/';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import AppBar from '../AppBar/AppBar';
 import EntityList from '../EntityList/EntityList';
+import ComplianceList from '../ComplianceList/ComplianceList';
 
-function App() {
+import { Container, Grid } from '@mui/material/';
 
-  // hardcoded for testing
-  const owner = '04044178226a3132ac6b5c441d839d6cf69d95a8d0d1e0f6eba43498a28a8ea58c8ef889c0ccedc94f5f6467e4caab1776a6867af143b9ba6171b27e6fe96174d1';
 
+export default function App() {
+ 
   return (
+
     <Container>
       <Grid>
         <AppBar />
       </Grid>
-        <Grid>
-          <EntityList owner={owner} />
-        </Grid>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<EntityList />} />
+          <Route exact path="/details/:id" element={<ComplianceList />} />
+        </Routes>
+      </BrowserRouter>
     </Container>
+  
   );
-}
 
-export default App;
+}

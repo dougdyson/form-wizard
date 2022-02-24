@@ -37,6 +37,7 @@ const getEntityDetailsByID = (entityID) => {
 };
 
 const getEntitiesForOwner = (owner) => {
+  console.log('owner', owner);
   return allEntities.filter(entity => entity.owner === owner);
 };
 
