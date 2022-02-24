@@ -81,7 +81,7 @@ export default function Entity(props) {
   const handleChange = (e) => {
     setEntity({...entity, [e.target.name]: e.target.value});
     // check for errors
-    if (!error && ! addressError){
+    if (!error && !addressError){
       setDisabled(false)
     }
   }
@@ -206,7 +206,8 @@ export default function Entity(props) {
             />
           </Grid>
           <Grid sx={{mb: 2}}>
-            <TextField fullWidth
+            <TextField 
+              fullWidth
               error={addressError}
               name="address" 
               label="Wallet Address"
@@ -220,7 +221,8 @@ export default function Entity(props) {
             />
           </Grid>
           <Grid sx={{mb: 4}}>
-            <Select fullWidth
+            <Select 
+              fullWidth
               name="jurisdictionID" 
               label="Jurisdiction"
               value={entity.jurisdictionID}
