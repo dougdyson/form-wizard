@@ -16,21 +16,13 @@ export default function HorizontalNonLinearStepper(props) {
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
 
-  const totalSteps = () => {
-    return steps.length;
-  };
+  const totalSteps = () => steps.length
 
-  const completedSteps = () => {
-    return Object.keys(completed).length;
-  };
+  const completedSteps = () => Object.keys(completed).length
 
-  const isLastStep = () => {
-    return activeStep === totalSteps() - 1;
-  };
+  const isLastStep = () => activeStep === totalSteps() - 1
 
-  const allStepsCompleted = () => {
-    return completedSteps() === totalSteps();
-  };
+  const allStepsCompleted = () => completedSteps() === totalSteps()
 
   const handleNext = () => {
     const newActiveStep =
@@ -88,7 +80,7 @@ export default function HorizontalNonLinearStepper(props) {
         </Stepper>
         <div>
           {allStepsCompleted() ? (
-            <React.Fragment>
+            <>
               <Typography sx={{ mt: 2, mb: 1 }}>
                 All steps completed - you&apos;re finished
               </Typography>
@@ -96,7 +88,7 @@ export default function HorizontalNonLinearStepper(props) {
                 <Box sx={{ flex: '1 1 auto' }} />
                 <Button onClick={handleReset}>Reset</Button>
               </Box>
-            </React.Fragment>
+            </>
           ) : (
             <React.Fragment>
               {activeStep === 0 ? <PersonalInfo /> : (activeStep === 1 ? <Address /> : activeStep === 2 ? <PhoneNumbers /> : <h1>All good!</h1>)}
