@@ -1,6 +1,9 @@
 import React from "react";
+import { ethers } from "ethers";
 
 import { Grid, Typography } from "@mui/material";
+
+const provider = new ethers.providers.Web3Provider(window.ethereum)
 
 const ConnectToWallet = () => {
 
