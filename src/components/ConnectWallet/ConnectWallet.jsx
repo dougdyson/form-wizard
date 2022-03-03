@@ -13,6 +13,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 
 const ConnectToWallet = () => {
+console.log(signer);
 
   return (
     <Grid container sx={{mt: 2, ml: 2}}>
