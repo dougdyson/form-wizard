@@ -136,7 +136,7 @@ export default function Entity(props) {
     if (e.target.name === "name")
     {
       setError(null);
-      setHelperText('Company Name is 3-40 characters')
+      setHelperText('Company Name is 3-40 characters');
       
       if (!addressError) 
       {
