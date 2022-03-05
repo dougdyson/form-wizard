@@ -140,7 +140,7 @@ export default function Entity(props) {
       
       if (!addressError) 
       {
-        setAddressHelperText(' ')
+        setAddressHelperText(' ');
       }
     }
     if (e.target.name === "address")
