@@ -1,5 +1,5 @@
 # Welcome to BlockDocs!
-This project started as a demonstration of basic form handling in React using Yup for form validation. Now, going to finish it up as a configurable web3 form wizard. Polygon blockchain.
+This project started as a demonstration of basic form handling in React using Yup for form validation. Now, going to finish it up as a configurable web3 form wizard. Polygon sidechain.
 
 ## Scope
 - connect to wallet
