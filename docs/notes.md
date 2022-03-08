@@ -16,6 +16,7 @@ This project started as a demonstration of basic form handling in React using Yu
 - implement backend on Polygon, particularly entity's current compliance status with associated business rules.
 
 ## TODO:
+- Set up environment
 - Connect to wallet
 - Logged In/Out state
 - Model data
