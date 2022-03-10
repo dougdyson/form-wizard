@@ -19,7 +19,7 @@ This project started as a demonstration of basic form handling in React using Yu
 - Set up environment, including truffle, ganache, etc
 - Connect to wallet
 - Logged In/Out state
-- Model data
+- Model data/smart contracts
 - Wireframe, quick and as lofi as possible
 - Create UI end-to-end skeleton/happy path
 - UI, full data
