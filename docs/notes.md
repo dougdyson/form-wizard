@@ -11,8 +11,8 @@ This project started as a demonstration of basic form handling in React using Yu
 - update form flow progress
 
 ## Ideas & Takeaways
-- activity feed approach to user onboarding and interaction, very mobile friendly
-- extensible model, with business rules matching corresponding React components
+- activity feed approach to user onboarding and interaction, very mobile friendly.
+- extensible model, with business rules matching corresponding React components.
 - implement backend on Polygon, particularly entity's current compliance status with associated business rules.
 
 ## TODO:
